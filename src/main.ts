@@ -1,7 +1,7 @@
 import './style.css'
+import { InteractiveMap } from './interactive-map.ts';
 
-document.querySelector<HTMLDivElement>('#app')!.innerHTML = `
-  <div>
-    
-  </div>
-`
+window.addEventListener('DOMContentLoaded', async () => {
+  const map: InteractiveMap = new InteractiveMap(document.getElementById('js-interactive-map') as HTMLElement);
+  await map.generateMap();
+});

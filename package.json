@@ -10,9 +10,14 @@
     "generate-data": "npx tsx scripts/generate-json-from-sheets.ts"
   },
   "devDependencies": {
+    "@types/d": "^1.0.4",
+    "@types/d3": "^7.4.3",
     "tsx": "^4.7.2",
     "typescript": "^5.2.2",
     "vite": "^5.2.0",
     "xlsx": "^0.18.5"
+  },
+  "dependencies": {
+    "d3": "^7.9.0"
   }
 }

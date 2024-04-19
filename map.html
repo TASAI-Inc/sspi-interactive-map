@@ -7,7 +7,21 @@
     <title>SSPI Interactive Map</title>
   </head>
   <body>
-    <div id="app"></div>
+  <section class="t-c-container">
+    <div class="t-c-title"><h1>SSIP Interactive Map</h1></div>
+
+    <div class="t-c-map-filter">
+      <div class="form-group">
+        <label for="js-indicator-filter" class="t-c-map-filter__label">Indicator</label>
+        <select class="t-c-map-filter__input" id="js-indicator-filter"></select>
+      </div>
+    </div>
+
+    <div class="t-c-map-container">
+      <svg class="t-c-map" id="js-interactive-map"></svg>
+    </div>
+  </section>
+
     <script type="module" src="/src/main.ts"></script>
   </body>
 </html>
