@@ -5,9 +5,8 @@
       "type": "Feature",
       "properties": {
         "name": "Algeria",
-        "cartodb_id": 1,
-        "created_at": "2013-11-12T16:15:59+0100",
-        "updated_at": "2013-11-12T16:15:59+0100"
+        "code": "DZA",
+        "cartodb_id": 1
       },
       "geometry": {
         "type": "MultiPolygon",
@@ -151,9 +150,8 @@
       "type": "Feature",
       "properties": {
         "name": "Angola",
-        "cartodb_id": 2,
-        "created_at": "2013-11-12T16:15:59+0100",
-        "updated_at": "2013-11-12T16:15:59+0100"
+        "code": "AGO",
+        "cartodb_id": 2
       },
       "geometry": {
         "type": "GeometryCollection",
@@ -293,9 +291,8 @@
       "type": "Feature",
       "properties": {
         "name": "Benin",
-        "cartodb_id": 3,
-        "created_at": "2013-11-12T16:15:59+0100",
-        "updated_at": "2013-11-12T16:15:59+0100"
+        "code": "BEN",
+        "cartodb_id": 3
       },
       "geometry": {
         "type": "MultiPolygon",
@@ -349,9 +346,8 @@
       "type": "Feature",
       "properties": {
         "name": "Botswana",
-        "cartodb_id": 4,
-        "created_at": "2013-11-12T16:15:59+0100",
-        "updated_at": "2013-11-12T16:15:59+0100"
+        "code": "BWA",
+        "cartodb_id": 4
       },
       "geometry": {
         "type": "MultiPolygon",
@@ -441,9 +437,8 @@
       "type": "Feature",
       "properties": {
         "name": "Burkina Faso",
-        "cartodb_id": 5,
-        "created_at": "2013-11-12T16:15:59+0100",
-        "updated_at": "2013-11-12T16:15:59+0100"
+        "code": "BFA",
+        "cartodb_id": 5
       },
       "geometry": {
         "type": "MultiPolygon",
@@ -529,9 +524,8 @@
       "type": "Feature",
       "properties": {
         "name": "Burundi",
-        "cartodb_id": 6,
-        "created_at": "2013-11-12T16:15:59+0100",
-        "updated_at": "2013-11-12T16:15:59+0100"
+        "code": "BDI",
+        "cartodb_id": 6
       },
       "geometry": {
         "type": "MultiPolygon",
@@ -571,9 +565,8 @@
       "type": "Feature",
       "properties": {
         "name": "Cameroon",
-        "cartodb_id": 7,
-        "created_at": "2013-11-12T16:15:59+0100",
-        "updated_at": "2013-11-12T16:15:59+0100"
+        "code": "CMR",
+        "cartodb_id": 7
       },
       "geometry": {
         "type": "MultiPolygon",
@@ -695,9 +688,8 @@
       "type": "Feature",
       "properties": {
         "name": "Cape Verde",
-        "cartodb_id": 8,
-        "created_at": "2013-11-12T16:15:59+0100",
-        "updated_at": "2013-11-12T16:15:59+0100"
+        "code": "CPV",
+        "cartodb_id": 8
       },
       "geometry": {
         "type": "GeometryCollection",
@@ -741,9 +733,8 @@
       "type": "Feature",
       "properties": {
         "name": "Central African Republic",
-        "cartodb_id": 9,
-        "created_at": "2013-11-12T16:15:59+0100",
-        "updated_at": "2013-11-12T16:15:59+0100"
+        "code": "CAF",
+        "cartodb_id": 9
       },
       "geometry": {
         "type": "MultiPolygon",
@@ -869,9 +860,8 @@
       "type": "Feature",
       "properties": {
         "name": "Chad",
-        "cartodb_id": 10,
-        "created_at": "2013-11-12T16:15:59+0100",
-        "updated_at": "2013-11-12T16:15:59+0100"
+        "code": "TCD",
+        "cartodb_id": 10
       },
       "geometry": {
         "type": "MultiPolygon",
@@ -981,9 +971,8 @@
       "type": "Feature",
       "properties": {
         "name": "Comoros",
-        "cartodb_id": 11,
-        "created_at": "2013-11-12T16:15:59+0100",
-        "updated_at": "2013-11-12T16:15:59+0100"
+        "code": "COM",
+        "cartodb_id": 11
       },
       "geometry": {
         "type": "MultiPolygon",
@@ -1003,10 +992,9 @@
     {
       "type": "Feature",
       "properties": {
-        "name": "Congo",
-        "cartodb_id": 12,
-        "created_at": "2013-11-12T16:15:59+0100",
-        "updated_at": "2013-11-12T16:15:59+0100"
+        "name": "Republic of the Congo",
+        "code": "COG",
+        "cartodb_id": 12
       },
       "geometry": {
         "type": "MultiPolygon",
@@ -1123,9 +1111,8 @@
       "type": "Feature",
       "properties": {
         "name": "Djibouti",
-        "cartodb_id": 13,
-        "created_at": "2013-11-12T16:15:59+0100",
-        "updated_at": "2013-11-12T16:15:59+0100"
+        "code": "DJI",
+        "cartodb_id": 13
       },
       "geometry": {
         "type": "MultiPolygon",
@@ -1161,9 +1148,8 @@
       "type": "Feature",
       "properties": {
         "name": "Egypt",
-        "cartodb_id": 14,
-        "created_at": "2013-11-12T16:15:59+0100",
-        "updated_at": "2013-11-12T16:15:59+0100"
+        "code": "EGY",
+        "cartodb_id": 14
       },
       "geometry": {
         "type": "MultiPolygon",
@@ -1262,9 +1248,8 @@
       "type": "Feature",
       "properties": {
         "name": "Equatorial Guinea",
-        "cartodb_id": 15,
-        "created_at": "2013-11-12T16:15:59+0100",
-        "updated_at": "2013-11-12T16:15:59+0100"
+        "code": "GNQ",
+        "cartodb_id": 15
       },
       "geometry": {
         "type": "GeometryCollection",
@@ -1305,9 +1290,8 @@
       "type": "Feature",
       "properties": {
         "name": "Eritrea",
-        "cartodb_id": 16,
-        "created_at": "2013-11-12T16:15:59+0100",
-        "updated_at": "2013-11-12T16:15:59+0100"
+        "code": "ERI",
+        "cartodb_id": 16
       },
       "geometry": {
         "type": "MultiPolygon",
@@ -1383,9 +1367,8 @@
       "type": "Feature",
       "properties": {
         "name": "Ethiopia",
-        "cartodb_id": 17,
-        "created_at": "2013-11-12T16:15:59+0100",
-        "updated_at": "2013-11-12T16:15:59+0100"
+        "code": "ETH",
+        "cartodb_id": 17
       },
       "geometry": {
         "type": "MultiPolygon",
@@ -1503,9 +1486,8 @@
       "type": "Feature",
       "properties": {
         "name": "Gabon",
-        "cartodb_id": 18,
-        "created_at": "2013-11-12T16:15:59+0100",
-        "updated_at": "2013-11-12T16:15:59+0100"
+        "code": "GAB",
+        "cartodb_id": 18
       },
       "geometry": {
         "type": "MultiPolygon",
@@ -1593,9 +1575,8 @@
       "type": "Feature",
       "properties": {
         "name": "Gambia",
-        "cartodb_id": 19,
-        "created_at": "2013-11-12T16:15:59+0100",
-        "updated_at": "2013-11-12T16:15:59+0100"
+        "code": "GMB",
+        "cartodb_id": 19
       },
       "geometry": {
         "type": "MultiPolygon",
@@ -1631,9 +1612,8 @@
       "type": "Feature",
       "properties": {
         "name": "Ghana",
-        "cartodb_id": 20,
-        "created_at": "2013-11-12T16:15:59+0100",
-        "updated_at": "2013-11-12T16:15:59+0100"
+        "code": "GHA",
+        "cartodb_id": 20
       },
       "geometry": {
         "type": "MultiPolygon",
@@ -1703,9 +1683,8 @@
       "type": "Feature",
       "properties": {
         "name": "Guinea",
-        "cartodb_id": 22,
-        "created_at": "2013-11-12T16:15:59+0100",
-        "updated_at": "2013-11-12T16:15:59+0100"
+        "code": "GIN",
+        "cartodb_id": 22
       },
       "geometry": {
         "type": "MultiPolygon",
@@ -1809,9 +1788,8 @@
       "type": "Feature",
       "properties": {
         "name": "Guinea-Bissau",
-        "cartodb_id": 23,
-        "created_at": "2013-11-12T16:15:59+0100",
-        "updated_at": "2013-11-12T16:15:59+0100"
+        "code": "GNB",
+        "cartodb_id": 23
       },
       "geometry": {
         "type": "MultiPolygon",
@@ -1850,10 +1828,9 @@
     {
       "type": "Feature",
       "properties": {
-        "name": "Ivory Coast",
-        "cartodb_id": 24,
-        "created_at": "2013-11-12T16:15:59+0100",
-        "updated_at": "2013-11-12T16:15:59+0100"
+        "name": "Côte d'Ivoire",
+        "code": "CIV",
+        "cartodb_id": 24
       },
       "geometry": {
         "type": "MultiPolygon",
@@ -1943,9 +1920,8 @@
       "type": "Feature",
       "properties": {
         "name": "Kenya",
-        "cartodb_id": 26,
-        "created_at": "2013-11-12T16:15:59+0100",
-        "updated_at": "2013-11-12T16:15:59+0100"
+        "code": "KEN",
+        "cartodb_id": 26
       },
       "geometry": {
         "type": "MultiPolygon",
@@ -2017,9 +1993,8 @@
       "type": "Feature",
       "properties": {
         "name": "Lesotho",
-        "cartodb_id": 27,
-        "created_at": "2013-11-12T16:15:59+0100",
-        "updated_at": "2013-11-12T16:15:59+0100"
+        "code": "LSO",
+        "cartodb_id": 27
       },
       "geometry": {
         "type": "MultiPolygon",
@@ -2053,9 +2028,8 @@
       "type": "Feature",
       "properties": {
         "name": "Liberia",
-        "cartodb_id": 28,
-        "created_at": "2013-11-12T16:15:59+0100",
-        "updated_at": "2013-11-12T16:15:59+0100"
+        "code": "LBR",
+        "cartodb_id": 28
       },
       "geometry": {
         "type": "MultiPolygon",
@@ -2109,9 +2083,8 @@
       "type": "Feature",
       "properties": {
         "name": "Libya",
-        "cartodb_id": 29,
-        "created_at": "2013-11-12T16:15:59+0100",
-        "updated_at": "2013-11-12T16:15:59+0100"
+        "code": "LBY",
+        "cartodb_id": 29
       },
       "geometry": {
         "type": "MultiPolygon",
@@ -2218,9 +2191,8 @@
       "type": "Feature",
       "properties": {
         "name": "Madagascar",
-        "cartodb_id": 30,
-        "created_at": "2013-11-12T16:15:59+0100",
-        "updated_at": "2013-11-12T16:15:59+0100"
+        "code": "MDG",
+        "cartodb_id": 30
       },
       "geometry": {
         "type": "GeometryCollection",
@@ -2349,9 +2321,8 @@
       "type": "Feature",
       "properties": {
         "name": "Malawi",
-        "cartodb_id": 31,
-        "created_at": "2013-11-12T16:15:59+0100",
-        "updated_at": "2013-11-12T16:15:59+0100"
+        "code": "MWI",
+        "cartodb_id": 31
       },
       "geometry": {
         "type": "MultiPolygon",
@@ -2432,9 +2403,8 @@
       "type": "Feature",
       "properties": {
         "name": "Mali",
-        "cartodb_id": 32,
-        "created_at": "2013-11-12T16:15:59+0100",
-        "updated_at": "2013-11-12T16:15:59+0100"
+        "code": "MLI",
+        "cartodb_id": 32
       },
       "geometry": {
         "type": "MultiPolygon",
@@ -2574,9 +2544,8 @@
       "type": "Feature",
       "properties": {
         "name": "Mauritania",
-        "cartodb_id": 33,
-        "created_at": "2013-11-12T16:15:59+0100",
-        "updated_at": "2013-11-12T16:15:59+0100"
+        "code": "MRT",
+        "cartodb_id": 33
       },
       "geometry": {
         "type": "MultiPolygon",
@@ -2655,9 +2624,8 @@
       "type": "Feature",
       "properties": {
         "name": "Mauritius",
-        "cartodb_id": 34,
-        "created_at": "2013-11-12T16:15:59+0100",
-        "updated_at": "2013-11-12T16:15:59+0100"
+        "code": "MUS",
+        "cartodb_id": 34
       },
       "geometry": {
         "type": "MultiPolygon",
@@ -2680,9 +2648,8 @@
       "type": "Feature",
       "properties": {
         "name": "Morocco",
-        "cartodb_id": 36,
-        "created_at": "2013-11-12T16:15:59+0100",
-        "updated_at": "2013-11-12T16:15:59+0100"
+        "code": "MAR",
+        "cartodb_id": 36
       },
       "geometry": {
         "type": "MultiPolygon",
@@ -2769,9 +2736,8 @@
       "type": "Feature",
       "properties": {
         "name": "Mozambique",
-        "cartodb_id": 37,
-        "created_at": "2013-11-12T16:15:59+0100",
-        "updated_at": "2013-11-12T16:15:59+0100"
+        "code": "MOZ",
+        "cartodb_id": 37
       },
       "geometry": {
         "type": "MultiPolygon",
@@ -2942,9 +2908,8 @@
       "type": "Feature",
       "properties": {
         "name": "Namibia",
-        "cartodb_id": 38,
-        "created_at": "2013-11-12T16:15:59+0100",
-        "updated_at": "2013-11-12T16:15:59+0100"
+        "code": "NAM",
+        "cartodb_id": 38
       },
       "geometry": {
         "type": "MultiPolygon",
@@ -3049,9 +3014,8 @@
       "type": "Feature",
       "properties": {
         "name": "Niger",
-        "cartodb_id": 39,
-        "created_at": "2013-11-12T16:15:59+0100",
-        "updated_at": "2013-11-12T16:15:59+0100"
+        "code": "NER",
+        "cartodb_id": 39
       },
       "geometry": {
         "type": "MultiPolygon",
@@ -3155,9 +3119,8 @@
       "type": "Feature",
       "properties": {
         "name": "Nigeria",
-        "cartodb_id": 40,
-        "created_at": "2013-11-12T16:15:59+0100",
-        "updated_at": "2013-11-12T16:15:59+0100"
+        "code": "NGA",
+        "cartodb_id": 40
       },
       "geometry": {
         "type": "MultiPolygon",
@@ -3277,9 +3240,8 @@
       "type": "Feature",
       "properties": {
         "name": "La Reunion",
-        "cartodb_id": 42,
-        "created_at": "2013-11-12T16:15:59+0100",
-        "updated_at": "2013-11-12T16:15:59+0100"
+        "code": "REUNION",
+        "cartodb_id": 42
       },
       "geometry": {
         "type": "MultiPolygon",
@@ -3303,9 +3265,8 @@
       "type": "Feature",
       "properties": {
         "name": "Rwanda",
-        "cartodb_id": 43,
-        "created_at": "2013-11-12T16:15:59+0100",
-        "updated_at": "2013-11-12T16:15:59+0100"
+        "code": "RWA",
+        "cartodb_id": 43
       },
       "geometry": {
         "type": "MultiPolygon",
@@ -3348,9 +3309,8 @@
       "type": "Feature",
       "properties": {
         "name": "Sao Tome and Principe",
-        "cartodb_id": 44,
-        "created_at": "2013-11-12T16:15:59+0100",
-        "updated_at": "2013-11-12T16:15:59+0100"
+        "code": "STP",
+        "cartodb_id": 44
       },
       "geometry": {
         "type": "MultiPolygon",
@@ -3371,9 +3331,8 @@
       "type": "Feature",
       "properties": {
         "name": "Senegal",
-        "cartodb_id": 45,
-        "created_at": "2013-11-12T16:15:59+0100",
-        "updated_at": "2013-11-12T16:15:59+0100"
+        "code": "SEN",
+        "cartodb_id": 45
       },
       "geometry": {
         "type": "MultiPolygon",
@@ -3450,9 +3409,8 @@
       "type": "Feature",
       "properties": {
         "name": "Seychelles",
-        "cartodb_id": 46,
-        "created_at": "2013-11-12T16:15:59+0100",
-        "updated_at": "2013-11-12T16:15:59+0100"
+        "code": "SYC",
+        "cartodb_id": 46
       },
       "geometry": {
         "type": "MultiPolygon",
@@ -3472,9 +3430,8 @@
       "type": "Feature",
       "properties": {
         "name": "Sierra Leone",
-        "cartodb_id": 47,
-        "created_at": "2013-11-12T16:15:59+0100",
-        "updated_at": "2013-11-12T16:15:59+0100"
+        "code": "SLE",
+        "cartodb_id": 47
       },
       "geometry": {
         "type": "MultiPolygon",
@@ -3523,9 +3480,8 @@
       "type": "Feature",
       "properties": {
         "name": "Somalia",
-        "cartodb_id": 48,
-        "created_at": "2013-11-12T16:15:59+0100",
-        "updated_at": "2013-11-12T16:15:59+0100"
+        "code": "SOM",
+        "cartodb_id": 48
       },
       "geometry": {
         "type": "MultiPolygon",
@@ -3623,9 +3579,8 @@
       "type": "Feature",
       "properties": {
         "name": "South Africa",
-        "cartodb_id": 49,
-        "created_at": "2013-11-12T16:15:59+0100",
-        "updated_at": "2013-11-12T16:15:59+0100"
+        "code": "ZAF",
+        "cartodb_id": 49
       },
       "geometry": {
         "type": "GeometryCollection",
@@ -3812,9 +3767,8 @@
       "type": "Feature",
       "properties": {
         "name": "Sudan",
-        "cartodb_id": 1,
-        "created_at": "2013-11-12T18:48:52+0100",
-        "updated_at": "2013-11-12T18:48:52+0100"
+        "code": "SDN",
+        "cartodb_id": 1
       },
       "geometry": {
         "type": "Polygon",
@@ -4066,9 +4020,8 @@
       "type": "Feature",
       "properties": {
         "name": "South Sudan",
-        "cartodb_id": 1,
-        "created_at": "2013-11-12T18:50:48+0100",
-        "updated_at": "2013-11-12T18:50:48+0100"
+        "code": "SSD",
+        "cartodb_id": 1
       },
       "geometry": {
         "type": "Polygon",
@@ -4244,9 +4197,8 @@
       "type": "Feature",
       "properties": {
         "name": "Swaziland",
-        "cartodb_id": 53,
-        "created_at": "2013-11-12T16:15:59+0100",
-        "updated_at": "2013-11-12T16:15:59+0100"
+        "code": "SWZ",
+        "cartodb_id": 53
       },
       "geometry": {
         "type": "MultiPolygon",
@@ -4276,9 +4228,8 @@
       "type": "Feature",
       "properties": {
         "name": "Tanzania",
-        "cartodb_id": 54,
-        "created_at": "2013-11-12T16:15:59+0100",
-        "updated_at": "2013-11-12T16:15:59+0100"
+        "code": "TZA",
+        "cartodb_id": 54
       },
       "geometry": {
         "type": "GeometryCollection",
@@ -4413,9 +4364,8 @@
       "type": "Feature",
       "properties": {
         "name": "Togo",
-        "cartodb_id": 55,
-        "created_at": "2013-11-12T16:15:59+0100",
-        "updated_at": "2013-11-12T16:15:59+0100"
+        "code": "TGO",
+        "cartodb_id": 55
       },
       "geometry": {
         "type": "MultiPolygon",
@@ -4466,9 +4416,8 @@
       "type": "Feature",
       "properties": {
         "name": "Tunisia",
-        "cartodb_id": 56,
-        "created_at": "2013-11-12T16:15:59+0100",
-        "updated_at": "2013-11-12T16:15:59+0100"
+        "code": "TUN",
+        "cartodb_id": 56
       },
       "geometry": {
         "type": "MultiPolygon",
@@ -4545,9 +4494,8 @@
       "type": "Feature",
       "properties": {
         "name": "Uganda",
-        "cartodb_id": 57,
-        "created_at": "2013-11-12T16:15:59+0100",
-        "updated_at": "2013-11-12T16:15:59+0100"
+        "code": "UGA",
+        "cartodb_id": 57
       },
       "geometry": {
         "type": "MultiPolygon",
@@ -4618,9 +4566,8 @@
       "type": "Feature",
       "properties": {
         "name": "Western Sahara",
-        "cartodb_id": 58,
-        "created_at": "2013-11-12T16:15:59+0100",
-        "updated_at": "2013-11-12T16:15:59+0100"
+        "code": "ESH",
+        "cartodb_id": 58
       },
       "geometry": {
         "type": "MultiPolygon",
@@ -4668,10 +4615,9 @@
     {
       "type": "Feature",
       "properties": {
-        "name": "DR Congo",
-        "cartodb_id": 59,
-        "created_at": "2013-11-12T16:15:59+0100",
-        "updated_at": "2013-11-12T16:15:59+0100"
+        "name": "Democratic Republic of the Congo",
+        "code": "COD",
+        "cartodb_id": 59
       },
       "geometry": {
         "type": "MultiPolygon",
@@ -4903,9 +4849,8 @@
       "type": "Feature",
       "properties": {
         "name": "Zambia",
-        "cartodb_id": 60,
-        "created_at": "2013-11-12T16:15:59+0100",
-        "updated_at": "2013-11-12T16:15:59+0100"
+        "code": "ZMB",
+        "cartodb_id": 60
       },
       "geometry": {
         "type": "MultiPolygon",
@@ -5035,9 +4980,8 @@
       "type": "Feature",
       "properties": {
         "name": "Zimbabwe",
-        "cartodb_id": 61,
-        "created_at": "2013-11-12T16:15:59+0100",
-        "updated_at": "2013-11-12T16:15:59+0100"
+        "code": "ZWE",
+        "cartodb_id": 61
       },
       "geometry": {
         "type": "MultiPolygon",
