@@ -2,7 +2,7 @@ import xlsx from "xlsx";
 import fs from 'fs';
 import { IIndicator } from '../src/models/models';
 
-const STATIC_COLUMNS: { [key: string]: string } = {
+const XLSX_STATIC_COLUMNS: { [key: string]: string } = {
   countries: 'Countries',
   countryCode: 'Country Code',
   overallCountryScore: 'Overall country score'
@@ -39,10 +39,10 @@ function generateIndicators (): void {
   });
 
   columnsObject.splice(0, 0, {
-    code: 'all',
-    label: 'All',
-    originalLabel: 'All',
-    averageValue: averageRow[STATIC_COLUMNS.overallCountryScore]
+    code: 'overall',
+    label: 'Overall',
+    originalLabel: 'Overall',
+    averageValue: averageRow[XLSX_STATIC_COLUMNS.overallCountryScore]
   })
 
   writeJson('indicators', columnsObject);
@@ -53,8 +53,8 @@ function writeJson (fileName: string, data: any): void {
 }
 
 function trimNonIndicatorsKeys (object: { [key: string]: string }): { [key: string]: string } {
-  Object.keys(STATIC_COLUMNS).forEach((key: string) => {
-    delete object[STATIC_COLUMNS[key]];
+  Object.keys(XLSX_STATIC_COLUMNS).forEach((key: string) => {
+    delete object[XLSX_STATIC_COLUMNS[key]];
   })
   return object;
 }
@@ -62,7 +62,7 @@ function trimNonIndicatorsKeys (object: { [key: string]: string }): { [key: stri
 function extractIndicatorsValues (rawData: { [key: string]: string }): { [key: string]: string } {
   const onlyFilterValues: { [key: string]: string } = trimNonIndicatorsKeys(rawData);
   return Object.keys(onlyFilterValues).reduce((obj: any, entry: any) => {
-    obj[generateIndicatorCode(entry)] = rawData[entry];
+    obj[generateIndicatorCode(entry)] = rawData[entry] === 'MD' ? null : rawData[entry];
     return obj;
   }, {});
 }
