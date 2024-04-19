@@ -1,4 +1,3 @@
-// Generate list of Score Types
 import xlsx from "xlsx";
 import fs from 'fs';
 
@@ -45,14 +44,13 @@ function generateFilterValues (): void {
     averageValue: averageRow[STATIC_COLUMNS.overallCountryScore]
   })
 
-  writeJson('filterValues', columnsObject);
+  writeJson('filter-values', columnsObject);
 }
 
 function writeJson (fileName: string, data: any): void {
   fs.writeFileSync(`output/${fileName}.json`, JSON.stringify(data));
 }
 
-// Generate list of countries with their data
 function trimNonFiltersKeys (object: { [key: string]: string }): { [key: string]: string } {
   Object.keys(STATIC_COLUMNS).forEach((key: string) => {
     delete object[STATIC_COLUMNS[key]];
