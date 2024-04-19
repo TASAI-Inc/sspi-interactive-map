@@ -1,5 +1,6 @@
 import * as d3 from 'd3';
 import { IndicatorFilter } from './indicator-filter.ts';
+import { IColorScale, ICountryDataEntry, IGeoJsonDataFeature } from './models/models.ts';
 
 export class InteractiveMap {
   private svg;
@@ -17,6 +18,13 @@ export class InteractiveMap {
     GOOD: '#A3FF00',
     EXCELLENT: '#2CBA00'
   };
+  private readonly COLOR_SCALES: IColorScale[] = [
+    { equalOrHigherThan: 0, lessThan: 2, color: this.MAP_COLORS.EXTREMELY_POOR },
+    { equalOrHigherThan: 2, lessThan: 4, color: this.MAP_COLORS.POOR },
+    { equalOrHigherThan: 4, lessThan: 6, color: this.MAP_COLORS.FAIR },
+    { equalOrHigherThan: 6, lessThan: 8, color: this.MAP_COLORS.GOOD },
+    { equalOrHigherThan: 8, max: 10, color: this.MAP_COLORS.EXCELLENT },
+  ];
 
   constructor (svgElement: HTMLElement) {
     this.svg = d3.select(svgElement);
@@ -35,12 +43,21 @@ export class InteractiveMap {
   }
 
   private async loadGeoJson (): Promise<any> {
-    return d3.json('scripts/data/africa.geojson');
+    return d3.json('output/africaWithScore.geojson');
   }
 
-  private getScaleColorFromValue (countryEntry: any): string {
-    console.log('entry',countryEntry)
-    return '';
+  private getScaleColorFromValue (countryEntry: IGeoJsonDataFeature): string {
+    const countryValue: number | null | undefined = countryEntry.properties.scores?.[this.getSelectedIndicator()];
+    if (!countryValue) {
+      return this.MAP_COLORS.NO_RESPONSE;
+    }
+
+    const scale: IColorScale | undefined = this.COLOR_SCALES.find(scale => {
+      // @ts-ignore
+      return countryValue > scale.equalOrHigherThan && (('lessThan' in scale && countryValue < scale.lessThan) || ('max' in scale && countryValue <= scale.max));
+    });
+
+    return scale ? scale.color : this.MAP_COLORS.NO_RESPONSE;
   }
 
   private generateMap (): void {
@@ -48,8 +65,6 @@ export class InteractiveMap {
       .geoMercator()
       .fitExtent([[0, 0], [this.SVG_WIDTH, this.SVG_HEIGHT]], this.geoJsonData);
     this.geoGenerator = d3.geoPath().projection(projection);
-
-    this.indicator = this.getSelectedIndicator();
 
     this.svg
       .append('g')
@@ -61,14 +76,16 @@ export class InteractiveMap {
         return d.properties.name;
       })
       .append('path')
-      .attr('fill', this.getScaleColorFromValue)
+      .attr('fill', (d) => {
+        return this.getScaleColorFromValue(d);
+      })
       .attr('d', this.geoGenerator)
       .style('stroke', '#fff')
       .on('mouseover', (e, d) => {
         this.handleMouseOver(e, d);
       })
       .on('mouseout', function (d: any, i: any) {
-        d3.select(this).transition().duration(300).attr('fill', '#69b3a2');
+        // d3.select(this).transition().duration(300).attr('fill', '#69b3a2');
         d3.selectAll('text')
           .transition()
           .delay(function (d: any, i: number): number {

@@ -29,3 +29,10 @@ export interface IGeoJsonData {
   type: 'string',
   features: IGeoJsonDataFeature[];
 }
+
+export interface IColorScale {
+  equalOrHigherThan: number;
+  lessThan?: number;
+  max?: number;
+  color: string;
+}
