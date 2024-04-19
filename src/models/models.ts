@@ -7,22 +7,25 @@ export interface IIndicator {
 
 export type Nullable<T> = T | null;
 
+export type ICountryScores = { [indicator: string]: number | null};
+
 export interface ICountryDataEntry {
   name: string;
   code: string;
-  scores: { [indicator: string]: number | null}
+  scores: ICountryScores
 }
 
-export interface IGeoJsonDataFeatures {
+export interface IGeoJsonDataFeature {
   type: string;
   properties: {
     name: string;
+    code: string;
     cartodb_id: string;
-    scores: { [indicator: string]: number | null}
+    scores?: ICountryScores
   },
   geometry: any;
 }
 export interface IGeoJsonData {
   type: 'string',
-  features: IGeoJsonDataFeatures[];
+  features: IGeoJsonDataFeature[];
 }

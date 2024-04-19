@@ -1,6 +1,8 @@
 import xlsx from "xlsx";
 import fs from 'fs';
-import { IIndicator } from '../src/models/models';
+import { ICountryDataEntry, IIndicator } from '../src/models/models';
+import { injectCountriesDataIntoGeoJson } from './inject-countries-data-into-geojson';
+import { writeJson } from '../src/helpers/json';
 
 const XLSX_STATIC_COLUMNS: { [key: string]: string } = {
   countries: 'Countries',
@@ -22,11 +24,11 @@ function generateIndicatorCode (value: string): string {
   return removeListIndent(value).replace(regexFirstChar, '').toLowerCase();
 }
 
-function generateIndicators (): void {
-  const dataWithHeaders: any = getXlsxData('scripts/data/sspi-datatable-matthieu.xlsx', true);
+async function generateIndicators (): Promise<void> {
+  const dataWithHeaders: any = getXlsxData('data/sspi-datatable-matthieu.xlsx', true);
   let headerColumns: string[] = dataWithHeaders[0].slice(3);
 
-  const allData: any = getXlsxData('scripts/data/sspi-datatable-matthieu.xlsx');
+  const allData: any = getXlsxData('data/sspi-datatable-matthieu.xlsx');
   const averageRow = allData.find((entry: any) => entry.Countries === 'Average');
 
   const columnsObject: IIndicator[] = headerColumns.map(header => {
@@ -45,11 +47,7 @@ function generateIndicators (): void {
     averageValue: averageRow[XLSX_STATIC_COLUMNS.overallCountryScore]
   })
 
-  writeJson('indicators', columnsObject);
-}
-
-function writeJson (fileName: string, data: any): void {
-  fs.writeFileSync(`output/${fileName}.json`, JSON.stringify(data));
+  await writeJson('indicators.json', columnsObject);
 }
 
 function trimNonIndicatorsKeys (object: { [key: string]: string }): { [key: string]: string } {
@@ -67,8 +65,8 @@ function extractIndicatorsValues (rawData: { [key: string]: string }): { [key: s
   }, {});
 }
 
-function generateCountriesData (): void {
-  const allData: any = getXlsxData('scripts/data/sspi-datatable-matthieu.xlsx');
+async function generateCountriesData (): Promise<ICountryDataEntry[]> {
+  const allData: any = getXlsxData('data/sspi-datatable-matthieu.xlsx');
 
   const reformattedData = allData
     .filter((data: any) => !!data['Country Code'])
@@ -83,8 +81,11 @@ function generateCountriesData (): void {
       }
     });
 
-    writeJson('countries-data', reformattedData);
+  await writeJson('countries-data.json', reformattedData);
+
+  return reformattedData;
 }
 
-generateIndicators();
-generateCountriesData();
+await generateIndicators();
+const countriesData: ICountryDataEntry[] = await generateCountriesData();
+await injectCountriesDataIntoGeoJson(countriesData);
