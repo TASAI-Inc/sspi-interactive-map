@@ -1,11 +1,17 @@
 import * as d3 from 'd3';
+import { IIndicator } from './models/models.ts';
+import { IndicatorFilter } from './indicator-filter.ts';
 
 export class InteractiveMap {
   private svg;
   private geoGenerator: any;
 
+  private indicatorFilter: IndicatorFilter;
+  private selectedIndicator: IIndicator;
+
   constructor (svgElement: HTMLElement) {
     this.svg = d3.select(svgElement);
+    this.indicatorFilter = new IndicatorFilter();
   }
 
   async generateMap (): Promise<void> {
