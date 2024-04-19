@@ -1,5 +1,6 @@
 import xlsx from "xlsx";
 import fs from 'fs';
+import { IIndicator } from '../src/models/models';
 
 const STATIC_COLUMNS: { [key: string]: string } = {
   countries: 'Countries',
@@ -16,21 +17,21 @@ function removeListIndent (value: string): string {
   return value.replace(/\d+\.\s/, '');
 }
 
-function generateFilterCode (value: string): string {
+function generateIndicatorCode (value: string): string {
   const regexFirstChar: RegExp = /\B\w+\W*/g;
   return removeListIndent(value).replace(regexFirstChar, '').toLowerCase();
 }
 
-function generateFilterValues (): void {
+function generateIndicators (): void {
   const dataWithHeaders: any = getXlsxData('scripts/data/sspi-datatable-matthieu.xlsx', true);
   let headerColumns: string[] = dataWithHeaders[0].slice(3);
 
   const allData: any = getXlsxData('scripts/data/sspi-datatable-matthieu.xlsx');
   const averageRow = allData.find((entry: any) => entry.Countries === 'Average');
 
-  const columnsObject = headerColumns.map(header => {
+  const columnsObject: IIndicator[] = headerColumns.map(header => {
     return {
-      code: generateFilterCode(header),
+      code: generateIndicatorCode(header),
       label: removeListIndent(header),
       originalLabel: header,
       averageValue: averageRow[header]
@@ -44,24 +45,24 @@ function generateFilterValues (): void {
     averageValue: averageRow[STATIC_COLUMNS.overallCountryScore]
   })
 
-  writeJson('filter-values', columnsObject);
+  writeJson('indicators', columnsObject);
 }
 
 function writeJson (fileName: string, data: any): void {
   fs.writeFileSync(`output/${fileName}.json`, JSON.stringify(data));
 }
 
-function trimNonFiltersKeys (object: { [key: string]: string }): { [key: string]: string } {
+function trimNonIndicatorsKeys (object: { [key: string]: string }): { [key: string]: string } {
   Object.keys(STATIC_COLUMNS).forEach((key: string) => {
     delete object[STATIC_COLUMNS[key]];
   })
   return object;
 }
 
-function extractFilteredValues (rawData: { [key: string]: string }): { [key: string]: string } {
-  const onlyFilterValues: { [key: string]: string } = trimNonFiltersKeys(rawData);
+function extractIndicatorsValues (rawData: { [key: string]: string }): { [key: string]: string } {
+  const onlyFilterValues: { [key: string]: string } = trimNonIndicatorsKeys(rawData);
   return Object.keys(onlyFilterValues).reduce((obj: any, entry: any) => {
-    obj[generateFilterCode(entry)] = rawData[entry];
+    obj[generateIndicatorCode(entry)] = rawData[entry];
     return obj;
   }, {});
 }
@@ -77,7 +78,7 @@ function generateCountriesData (): void {
         code: data['Country Code'],
         scores: {
           overall: data['Overall country score'],
-          ...extractFilteredValues(data)
+          ...extractIndicatorsValues(data)
         }
       }
     });
@@ -85,5 +86,5 @@ function generateCountriesData (): void {
     writeJson('countries-data', reformattedData);
 }
 
-generateFilterValues();
+generateIndicators();
 generateCountriesData();
