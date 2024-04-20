@@ -31,8 +31,9 @@ export interface IGeoJsonData {
 }
 
 export interface IColorScale {
-  equalOrHigherThan: number;
+  equalOrHigherThan?: number;
   lessThan?: number;
   max?: number;
   color: string;
+  label: string;
 }

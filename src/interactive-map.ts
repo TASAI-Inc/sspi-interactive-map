@@ -1,6 +1,7 @@
 import * as d3 from 'd3';
 import { IndicatorFilter } from './indicator-filter.ts';
 import { IColorScale, ICountryDataEntry, IGeoJsonDataFeature } from './models/models.ts';
+import { buildScale, COLOR_SCALES, MAP_COLORS } from './scale.ts';
 
 export class InteractiveMap {
   private svg;
@@ -8,23 +9,8 @@ export class InteractiveMap {
   private indicatorFilter: IndicatorFilter;
   private geoJsonData: any;
 
-  private readonly SVG_WIDTH: number = 600;
-  private readonly SVG_HEIGHT: number = 800;
-  private readonly MAP_COLORS: { [key: string]: string } = {
-    NO_RESPONSE: '#D1D3D4',
-    EXTREMELY_POOR: '#FF0000',
-    POOR: '#FFA700',
-    FAIR: '#FFF400',
-    GOOD: '#A3FF00',
-    EXCELLENT: '#2CBA00'
-  };
-  private readonly COLOR_SCALES: IColorScale[] = [
-    { equalOrHigherThan: 0, lessThan: 2, color: this.MAP_COLORS.EXTREMELY_POOR },
-    { equalOrHigherThan: 2, lessThan: 4, color: this.MAP_COLORS.POOR },
-    { equalOrHigherThan: 4, lessThan: 6, color: this.MAP_COLORS.FAIR },
-    { equalOrHigherThan: 6, lessThan: 8, color: this.MAP_COLORS.GOOD },
-    { equalOrHigherThan: 8, max: 10, color: this.MAP_COLORS.EXCELLENT },
-  ];
+  private readonly SVG_WIDTH: number = 700;
+  private readonly SVG_HEIGHT: number = 700;
 
   constructor (svgElement: HTMLElement) {
     this.svg = d3.select(svgElement);
@@ -35,6 +21,7 @@ export class InteractiveMap {
 
   public async init (): Promise<void> {
     this.geoJsonData = await this.loadGeoJson();
+    buildScale();
     this.generateMap();
   }
 
@@ -49,15 +36,15 @@ export class InteractiveMap {
   private getScaleColorFromValue (countryEntry: IGeoJsonDataFeature): string {
     const countryValue: number | null | undefined = countryEntry.properties.scores?.[this.getSelectedIndicator()];
     if (!countryValue) {
-      return this.MAP_COLORS.NO_RESPONSE;
+      return MAP_COLORS.NO_RESPONSE;
     }
 
-    const scale: IColorScale | undefined = this.COLOR_SCALES.find(scale => {
+    const scale: IColorScale | undefined = COLOR_SCALES.find(scale => {
       // @ts-ignore
       return countryValue > scale.equalOrHigherThan && (('lessThan' in scale && countryValue < scale.lessThan) || ('max' in scale && countryValue <= scale.max));
     });
 
-    return scale ? scale.color : this.MAP_COLORS.NO_RESPONSE;
+    return scale ? scale.color : MAP_COLORS.NO_RESPONSE;
   }
 
   private generateMap (): void {
