@@ -111,7 +111,7 @@ export class InteractiveMap {
 
     this.svg
       .append('text')
-      .text(`${d.properties.name} ${d.properties.score ? d.properties.score.toFixed(1) : 'MD'}`)
+      .text(`${d.properties.name} ${d.properties.score != null ? d.properties.score.toFixed(1) : 'MD'}`)
       .style('font-size', 30)
       .style('font-weight', 'bold')
       .style('display', 'inline')
