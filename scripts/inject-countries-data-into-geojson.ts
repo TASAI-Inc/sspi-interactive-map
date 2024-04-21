@@ -8,9 +8,7 @@ export async function injectCountriesDataIntoGeoJson (countriesData: ICountryDat
     // @ts-ignore
     const country: ICountryDataEntry =
       countriesData.find(country => country.code === feature.properties.code);
-    if (country) {
-      feature.properties.scores = country.scores;
-    }
+    feature.properties.score = null;
   });
 
   await writeJson('africaWithScore.geojson', africaGeoJsonData);

@@ -21,7 +21,7 @@ export interface IGeoJsonDataFeature {
     name: string;
     code: string;
     cartodb_id: string;
-    scores?: ICountryScores
+    score: number | null;
   },
   geometry: any;
 }
