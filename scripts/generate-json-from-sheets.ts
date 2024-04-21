@@ -1,5 +1,4 @@
 import xlsx from "xlsx";
-import fs from 'fs';
 import { ICountryDataEntry, IIndicator } from '../src/models/models';
 import { injectCountriesDataIntoGeoJson } from './inject-countries-data-into-geojson';
 import { writeJson } from '../src/helpers/json';

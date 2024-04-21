@@ -21,7 +21,7 @@ export interface IGeoJsonDataFeature {
     name: string;
     code: string;
     cartodb_id: string;
-    scores?: ICountryScores
+    score: number | null;
   },
   geometry: any;
 }
@@ -31,8 +31,9 @@ export interface IGeoJsonData {
 }
 
 export interface IColorScale {
-  equalOrHigherThan: number;
+  equalOrHigherThan?: number;
   lessThan?: number;
   max?: number;
   color: string;
+  label: string;
 }

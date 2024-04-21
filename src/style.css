@@ -47,13 +47,16 @@ body {
 
 .t-c-map-container {
   margin: 0 auto;
-  padding: 4rem;
+  padding: 2rem 4rem;
   text-align: center;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
 }
 
 .t-c-map {
-  width: 800px;
-  height: 800px;
+  width: 700px;
+  height: 700px;
 }
 
 .t-c-map-filter {
@@ -79,4 +82,30 @@ body {
   background-image: none;
   border: 1px solid #ccc;
   border-radius: 4px;
+}
+
+.t-c-scale-container {
+  display: flex;
+  flex-direction: column;
+  row-gap: 3px;
+}
+
+.t-c-scale {
+  display: flex;
+  flex-direction: row;
+  column-gap: 10px;
+  align-items: center;
+}
+
+.t-c-scale-color {
+  padding: 5px 8px;
+  font-weight: 500;
+  width: 70px;
+  height: 20px;
+  line-height: 20px;
+}
+
+.t-c-scale-label {
+  font-weight: 500;
+  line-height: 20px;
 }

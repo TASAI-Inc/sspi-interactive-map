@@ -8,7 +8,7 @@ export interface IIndicatorOptions {
 export class IndicatorFilter {
   private readonly HTML_ELEMENT_ID: string = 'js-indicator-filter';
   private element: Nullable<HTMLInputElement>;
-  public selectedIndicator: string;
+  public selectedIndicator: string = '';
 
   constructor (options: IIndicatorOptions) {
     this.element = this.getElement();
