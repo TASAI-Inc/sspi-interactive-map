@@ -95,7 +95,7 @@ export class InteractiveMap {
           return this.getScaleColorFromValue(d.properties.score);
         })
         .attr('d', this.geoGenerator)
-        .style('stroke', '#fff')
+        .style('stroke', '#000')
         .on('mouseover', (e, d) => {
           this.handleMouseOver(e, d);
         })
