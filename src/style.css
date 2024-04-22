@@ -109,3 +109,16 @@ body {
   font-weight: 500;
   line-height: 20px;
 }
+
+.t-c-tooltip__label {
+  padding: 0;
+  display: block;
+  margin: 0;
+  font-size: 14px;
+}
+
+.t-c-tooltip__score {
+  padding: 0;
+  margin: 0;
+  font-size: 14px;
+}

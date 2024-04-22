@@ -12,6 +12,7 @@ export class InteractiveMap {
 
   private readonly SVG_WIDTH: number = 700;
   private readonly SVG_HEIGHT: number = 700;
+  private tooltip: any;
 
   constructor (svgElement: HTMLElement) {
     this.svg = d3.select(svgElement);
@@ -28,6 +29,7 @@ export class InteractiveMap {
     buildScale();
     this.setCurrentCountriesIndicators();
     this.generateMap();
+    this.createTooltip();
   }
 
   setCurrentCountriesIndicators (): void {
@@ -61,8 +63,6 @@ export class InteractiveMap {
   }
 
   private getScaleColorFromValue (countryValue: Nullable<number>): string {
-    console.log('countryValue', countryValue)
-
     if (countryValue == null) {
       return MAP_COLORS.NO_RESPONSE;
     }
@@ -87,41 +87,84 @@ export class InteractiveMap {
       .data(this.geoJsonData.features)
       .enter()
       .append('g')
-        .attr('class', function (d: any) {
-          return d.properties.name;
-        })
-        .append('path')
-        .attr('fill', (d: any) => {
-          return this.getScaleColorFromValue(d.properties.score);
-        })
-        .attr('d', this.geoGenerator)
-        .style('stroke', '#000')
-        .on('mouseover', (e, d) => {
-          this.handleMouseOver(e, d);
-        })
-        .on('mouseout', function (/*d: any, i: any*/) {
-          // d3.select(this).transition().duration(300).attr('fill', '#69b3a2');
-          d3.selectAll('text')
-            .text('');
-        })
+      .attr('class', function (d: any) {
+        return d.properties.name;
+      })
+      .append('path')
+      .attr('fill', (d: any) => {
+        return this.getScaleColorFromValue(d.properties.score);
+      })
+      .attr('d', this.geoGenerator)
+      .style('stroke', '#000')
+      .on('mouseover', (e, d) => {
+        this.handleMouseOver(e, d);
+      })
+      .on('mousemove', (e) => {
+        this.handleMouseMove(e);
+      })
+      .on('mouseout', () => {
+        this.handleMouseOut();
+      })
   }
 
-  handleMouseOver (_e: any, d: any): void {
-    let centroid = this.geoGenerator.centroid(d);
-
-    this.svg
-      .append('text')
-      .text(`${d.properties.name} ${d.properties.score != null ? d.properties.score.toFixed(1) : 'MD'}`)
-      .style('font-size', 30)
-      .style('font-weight', 'bold')
-      .style('display', 'inline')
-      .attr('transform', 'translate(' + centroid + ')')
-      .style('fill', 'black')
-      .transition()
-      .delay((): number => {
-        return 100;
-      });
+  createTooltip (): void {
+    this.tooltip = d3.select('body')
+      .append('div')
+      .style('position', 'absolute')
+      .style('visibility', 'hidden')
+      .style('background-color', '#fff')
+      .style('color', 'black')
+      .style('z-index', '10')
+      .style('border', 'solid')
+      .style('border-color', '#000')
+      .style('border-width', '0px')
+      .style('padding', '10px')
+      .style('box-shadow', '0px 0px 4px #000')
+      .attr('id', 'tooltip');
   }
+
+  handleMouseOver (event: any, d: any) {
+    d3.select(event.currentTarget).attr('stroke', 'black');
+    this.tooltip
+      .style('visibility', 'visible')
+      // .style('top', (event.pageY) - 40 + 'px').style('left', (event.pageX) + 10 + 'px')
+      .html(`
+          <h4 class="t-c-tooltip__label">${d.properties.name}</h4>
+          <span class="t-c-tooltip__score">${d.properties.score != null ? d.properties.score.toFixed(1) : 'MD'}</span>`);
+  };
+
+  handleMouseMove (event: any): void {
+    let x_hover = 0;
+    let y_hover = 0;
+
+    let tooltipWidth = parseInt(this.tooltip.style('width'));
+    let tooltipHeight = parseInt(this.tooltip.style('height'));
+    let classed, notClassed;
+
+    if (event.pageX > document.body.clientWidth / 2) {
+      x_hover = tooltipWidth + 30;
+      classed = 'right';
+      notClassed = 'left';
+    } else {
+      x_hover = -30;
+      classed = 'left';
+      notClassed = 'right';
+    }
+
+    y_hover = (document.body.clientHeight - event.pageY < (tooltipHeight + 4)) ? event.pageY - (tooltipHeight + 4) : event.pageY - tooltipHeight / 2;
+
+    return this.tooltip
+      .classed(classed, true)
+      .classed(notClassed, false)
+      .style('visibility', 'visible')
+      .style('top', y_hover + 'px')
+      .style('left', (event.pageX - x_hover) + 'px');
+  }
+
+  handleMouseOut (/*event: any, d: any*/) {
+    // d3.select(this).attr('stroke', 'none');
+    this.tooltip.style('visibility', 'hidden');
+  };
 
   private getSelectedIndicator (): string {
     return this.indicatorFilter.selectedIndicator;
