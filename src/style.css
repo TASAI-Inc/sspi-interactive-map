@@ -110,11 +110,22 @@ body {
   line-height: 20px;
 }
 
+.lm-c-tooltip {
+  position: absolute;
+  visibility: hidden;
+  background-color: #fff;
+  color: #000;
+  z-index: 10;
+  border-radius: 3px;
+  padding: 5px 10px;
+  box-shadow: 0 0 10px 1px rgba(0, 0, 0, 0.3);
+}
+
 .t-c-tooltip__label {
   padding: 0;
   display: block;
   margin: 0;
-  font-size: 14px;
+  font-size: 15px;
 }
 
 .t-c-tooltip__score {

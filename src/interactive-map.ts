@@ -95,7 +95,7 @@ export class InteractiveMap {
         return this.getScaleColorFromValue(d.properties.score);
       })
       .attr('d', this.geoGenerator)
-      .style('stroke', '#000')
+      .style('stroke', '#fff')
       .on('mouseover', (e, d) => {
         this.handleMouseOver(e, d);
       })
@@ -110,27 +110,20 @@ export class InteractiveMap {
   createTooltip (): void {
     this.tooltip = d3.select('body')
       .append('div')
-      .style('position', 'absolute')
-      .style('visibility', 'hidden')
-      .style('background-color', '#fff')
-      .style('color', 'black')
-      .style('z-index', '10')
-      .style('border', 'solid')
-      .style('border-color', '#000')
-      .style('border-width', '0px')
-      .style('padding', '10px')
-      .style('box-shadow', '0px 0px 4px #000')
-      .attr('id', 'tooltip');
+      .attr('class', 'lm-c-tooltip');
+  }
+
+  roundToFirstDecimal (value: number): number {
+    return parseFloat(value.toFixed(1));
   }
 
   handleMouseOver (event: any, d: any) {
     d3.select(event.currentTarget).attr('stroke', 'black');
     this.tooltip
       .style('visibility', 'visible')
-      // .style('top', (event.pageY) - 40 + 'px').style('left', (event.pageX) + 10 + 'px')
       .html(`
           <h4 class="t-c-tooltip__label">${d.properties.name}</h4>
-          <span class="t-c-tooltip__score">${d.properties.score != null ? d.properties.score.toFixed(1) : 'MD'}</span>`);
+          <span class="t-c-tooltip__score">${d.properties.score != null ? this.roundToFirstDecimal(d.properties.score) : 'No Data'}</span>`);
   };
 
   handleMouseMove (event: any): void {
