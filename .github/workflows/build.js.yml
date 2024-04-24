@@ -41,6 +41,10 @@ jobs:
         uses: actions/configure-pages@v4
       - name: Build Jekyll Pages
         uses: actions/jekyll-build-pages@v1
+        with:
+          source: './'
+          destination: './_site'
+          verbose: true
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:

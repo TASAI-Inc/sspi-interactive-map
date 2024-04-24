@@ -15,7 +15,7 @@ collections:
 
 
 destination: ./_site
-exclude: [/*.php, /*.lock, /package.json, /package-lock.json, /map.html, /README.md, /tsconfig.json, /src, /scripts, /data, /output, /template-parts, /languages, /js, /inc, /wordpress, /functions]
+exclude: [/*.php, /*.lock, /package.json, /package-lock.json, /*.config.js, /map.html, /README.md, /tsconfig.json, /src, /scripts, /data, /output, /template-parts, /languages, /js, /inc, /wordpress, /functions]
 
 # plugins:
 #   - jekyll-autoprefixer
