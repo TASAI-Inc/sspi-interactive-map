@@ -18,6 +18,8 @@ export class InteractiveMap {
   private ISLAND_LABEL_OFFSET_X: number = 25;
   private LABEL_DEFAULT_FONT_SIZE: number = 11;
 
+  private readonly ASSETS_DIR: string = './assets/map/data';
+
   constructor (svgElement: HTMLElement) {
     this.svg = d3.select(svgElement);
     this.indicatorFilter = new IndicatorFilter({
@@ -60,11 +62,11 @@ export class InteractiveMap {
   }
 
   private async loadGeoJson (): Promise<any> {
-    return d3.json('output/africaWithScore.geojson');
+    return d3.json(`${this.ASSETS_DIR}/africaWithScore.geojson`);
   }
 
   private async loadCountriesScore (): Promise<any> {
-    return d3.json('output/countries-data.json');
+    return d3.json(`${this.ASSETS_DIR}/countries-data.json`);
   }
 
   private getScaleColorFromValue (countryValue: Nullable<number>): string {
@@ -102,6 +104,7 @@ export class InteractiveMap {
       })
       .attr('d', this.geoGenerator)
       .style('stroke', d => {
+        // @ts-ignore
         return d.properties.isIsland ? '#000' : '#fff'
       })
       .on('mouseover', (e, d) => {
@@ -125,14 +128,17 @@ export class InteractiveMap {
         return this.path.centroid(d)[0]
       })
       .attr('y', (d) => {
+        // @ts-ignore
         return this.path.centroid(d)[1] + (d.properties.isIsland ? this.ISLAND_LABEL_OFFSET_X : 0)
       })
       .html(d => {
+        // @ts-ignore
         return d.properties.name;
       })
       .attr('text-anchor', 'middle')
       .attr('alignment-baseline', 'central')
       .style('font-size', d => {
+        // @ts-ignore
         return d.properties.labelFontSize ?? this.LABEL_DEFAULT_FONT_SIZE;
       })
       .style('fill', '#000')

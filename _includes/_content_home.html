@@ -39,26 +39,21 @@
         <br />
 
         <br /> <br /> <br />
-        <p class="lead text-center"><strong>Interactive Country Map Here</strong></p>
+
         <!-- todo map here -->
-        <div id="app"></div>
-        <p> . . .</p>
-        <p> . . .</p>
-        <p> . . .</p>
-        <p> . . .</p>
-        <p> . . .</p>
-        <p> . . .</p>
-        <p> . . .</p>
-        <p> . . .</p>
-        <p> . . .</p>
-        <p> . . .</p>
-        <p> . . .</p>
-        <p> . . .</p>
-        <p> . . .</p>
-        <p> . . .</p>
-        <p> . . .</p>
-        <p> . . .</p>
-        <p> . . .</p>
+        <section>
+          <div class="t-c-map-filter">
+            <div class="form-group">
+              <label for="js-indicator-filter" class="t-c-map-filter__label">Indicator</label>
+              <select class="t-c-map-filter__input" id="js-indicator-filter"></select>
+            </div>
+          </div>
+
+          <div class="t-c-map-container">
+            <div id="js-scale-container" class="t-c-scale-container"></div>
+            <svg class="t-c-map" id="js-interactive-map"></svg>
+          </div>
+        </section>
       </div>
     </div>
   </div>
@@ -315,7 +310,7 @@
 
 
 
-          
+
         </div>
 
 
