@@ -1,0 +1,94 @@
+// note Header **********************
+img.header_logo {
+    max-width: 42px;
+}
+
+//note nav navbar
+
+//global nav-link styles
+a.nav-link {
+    margin-left: 1.5rem;
+}
+// also see _variables.scss
+.navbar.scroll-me {
+    // note ************ START navbar when scrolled to top
+    background-color: rgba($dreambays_silver_light, 0.96);
+
+    @include media-breakpoint-up(lg) {
+        background-color: rgba($dreambays_silver_light, 0);
+    }
+
+    transition: background-color 100ms linear;
+
+    // nav link colors when scrolled to top
+    a.nav-link {
+        color: $black;
+        text-shadow: none;
+        letter-spacing: 1px;
+        -webkit-transition: all ease-in-out 0.25s;
+        -moz-transition: all ease-in-out 0.25s;
+        -o-transition: all ease-in-out 0.25s;
+        transition: all ease-in-out 0.25s;
+
+        &:hover {
+            color: $primary;
+            text-decoration: underline;
+        }
+    }
+       // dropdopdiwn nav link colors when scrolled to top
+       .dropdown-menu a.nav-link {
+        color: $black;
+    }
+}
+
+// note show hide logo in navbar md-up
+// body.home .navbar-brand {
+//     display: inline-block;
+//     width: 1px;
+
+//     @include media-breakpoint-up(md) {
+//         display: none;
+//         width: 100%;
+//     }
+// }
+
+.navbar.scroll-me.scrolled {
+    // note ************ START navbar when scrolled down
+    background-color: rgba($dreambays_silver_light, 0.96);
+
+    @include media-breakpoint-up(lg) {
+        background-color: rgba($dreambays_silver_light, 0.97);
+    }
+
+    transition: background-color 200ms linear;
+
+    // note logo in navbar
+    .navbar-brand {
+        display: inline-block !important;
+    }
+
+    // nav link colors when scrolled down
+    a.nav-link {
+        color: $black;
+        text-shadow: none;
+        letter-spacing: 1px;
+        -webkit-transition: all ease-in-out 0.75s;
+        -moz-transition: all ease-in-out 0.75s;
+        -o-transition: all ease-in-out 0.75s;
+        transition: all ease-in-out 0.75s;
+        text-shadow: 0 transparent;
+        &:hover {
+            color: $primary;
+            text-decoration: underline;
+        }
+    }
+}
+
+// note start sub_banner ******************************
+
+.sub_banner {
+    margin-top: 0;
+    @include media-breakpoint-up(lg) {
+        margin-top: -4.25rem;
+    }
+}

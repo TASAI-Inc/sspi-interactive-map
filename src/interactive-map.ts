@@ -5,7 +5,8 @@ import { buildScale, COLOR_SCALES, MAP_COLORS } from './scale.ts';
 
 export class InteractiveMap {
   private svg;
-  private geoGenerator: any
+  private geoGenerator: any;
+  private path: any;
   private indicatorFilter: IndicatorFilter;
   private geoJsonData: any;
   private countriesScores: ICountryDataEntry[] = [];
@@ -13,6 +14,9 @@ export class InteractiveMap {
   private readonly SVG_WIDTH: number = 700;
   private readonly SVG_HEIGHT: number = 700;
   private tooltip: any;
+
+  private ISLAND_LABEL_OFFSET_X: number = 25;
+  private LABEL_DEFAULT_FONT_SIZE: number = 11;
 
   constructor (svgElement: HTMLElement) {
     this.svg = d3.select(svgElement);
@@ -29,6 +33,7 @@ export class InteractiveMap {
     buildScale();
     this.setCurrentCountriesIndicators();
     this.generateMap();
+    this.generateMapLabels();
     this.createTooltip();
   }
 
@@ -79,7 +84,8 @@ export class InteractiveMap {
     let projection: d3.GeoProjection = d3
       .geoMercator()
       .fitExtent([[0, 0], [this.SVG_WIDTH, this.SVG_HEIGHT]], this.geoJsonData);
-    this.geoGenerator = d3.geoPath().projection(projection);
+    this.path = d3.geoPath();
+    this.geoGenerator = this.path.projection(projection);
 
     this.svg
       .append('g')
@@ -95,7 +101,9 @@ export class InteractiveMap {
         return this.getScaleColorFromValue(d.properties.score);
       })
       .attr('d', this.geoGenerator)
-      .style('stroke', '#fff')
+      .style('stroke', d => {
+        return d.properties.isIsland ? '#000' : '#fff'
+      })
       .on('mouseover', (e, d) => {
         this.handleMouseOver(e, d);
       })
@@ -105,6 +113,29 @@ export class InteractiveMap {
       .on('mouseout', () => {
         this.handleMouseOut();
       })
+  }
+
+  private generateMapLabels (): void {
+    this.svg.append('g')
+      .selectAll('labels')
+      .data(this.geoJsonData.features)
+      .enter()
+      .append('text')
+      .attr('x', (d) => {
+        return this.path.centroid(d)[0]
+      })
+      .attr('y', (d) => {
+        return this.path.centroid(d)[1] + (d.properties.isIsland ? this.ISLAND_LABEL_OFFSET_X : 0)
+      })
+      .html(d => {
+        return d.properties.name;
+      })
+      .attr('text-anchor', 'middle')
+      .attr('alignment-baseline', 'central')
+      .style('font-size', d => {
+        return d.properties.labelFontSize ?? this.LABEL_DEFAULT_FONT_SIZE;
+      })
+      .style('fill', '#000')
   }
 
   createTooltip (): void {

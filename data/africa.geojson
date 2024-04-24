@@ -689,6 +689,7 @@
       "properties": {
         "name": "Cape Verde",
         "code": "CPV",
+        "isIsland": true,
         "cartodb_id": 8
       },
       "geometry": {
@@ -732,7 +733,7 @@
     {
       "type": "Feature",
       "properties": {
-        "name": "Central African Republic",
+        "name": "Central<br/>African<br/>Republic",
         "code": "CAF",
         "cartodb_id": 9
       },
@@ -972,6 +973,7 @@
       "properties": {
         "name": "Comoros",
         "code": "COM",
+        "isIsland": true,
         "cartodb_id": 11
       },
       "geometry": {
@@ -2623,30 +2625,6 @@
     {
       "type": "Feature",
       "properties": {
-        "name": "Mauritius",
-        "code": "MUS",
-        "cartodb_id": 34
-      },
-      "geometry": {
-        "type": "MultiPolygon",
-        "coordinates": [
-          [
-            [
-              [57.529824, -20.520931],
-              [57.306096, -20.436863],
-              [57.533892, -20.020594],
-              [57.674908, -20.001611],
-              [57.795585, -20.223983],
-              [57.722365, -20.438219],
-              [57.529824, -20.520931]
-            ]
-          ]
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
         "name": "Morocco",
         "code": "MAR",
         "cartodb_id": 36
@@ -3239,31 +3217,6 @@
     {
       "type": "Feature",
       "properties": {
-        "name": "La Reunion",
-        "code": "REUNION",
-        "cartodb_id": 42
-      },
-      "geometry": {
-        "type": "MultiPolygon",
-        "coordinates": [
-          [
-            [
-              [55.710173, -20.998216],
-              [55.851189, -21.13652],
-              [55.825427, -21.31957],
-              [55.673563, -21.373807],
-              [55.342717, -21.268045],
-              [55.22204, -21.022623],
-              [55.456615, -20.8572],
-              [55.710173, -20.998216]
-            ]
-          ]
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
         "name": "Rwanda",
         "code": "RWA",
         "cartodb_id": 43
@@ -3309,6 +3262,7 @@
       "type": "Feature",
       "properties": {
         "name": "Sao Tome and Principe",
+        "isIsland": true,
         "code": "STP",
         "cartodb_id": 44
       },
@@ -3409,6 +3363,7 @@
       "type": "Feature",
       "properties": {
         "name": "Seychelles",
+        "isIsland": true,
         "code": "SYC",
         "cartodb_id": 46
       },

@@ -1,0 +1,62 @@
+---
+---
+@use 'sass:math';
+
+@import "../../_sass/bootstrap/functions"; // required
+
+// Include required Bootstrap stylesheets
+
+@import "../../_sass/variables";  // note in root _sass for ease of access
+
+@import "../../_sass/bootstrap/maps"; // required
+@import "../../_sass/bootstrap/mixins"; // required
+@import "../../_sass/bootstrap/root"; // required
+@import "../../_sass/bootstrap/reboot";// required
+
+@import "../../_sass/cover_example"; //load cover sheet in its own scss
+
+// Include any optional Bootstrap components 
+
+@import "../../_sass/bootstrap/utilities"; 
+
+@import "../../_sass/bootstrap/type";  
+@import "../../_sass/bootstrap/images";
+@import "../../_sass/bootstrap/containers";
+@import "../../_sass/bootstrap/grid";
+@import "../../_sass/bootstrap/helpers";
+@import "../../_sass/bootstrap/accordion";
+@import "../../_sass/bootstrap/alert";
+// @import "../../_sass/bootstrap/badge";
+// @import "../../_sass/bootstrap/breadcrumb";
+@import "../../_sass/bootstrap/button-group";
+@import "../../_sass/bootstrap/buttons";
+@import "../../_sass/bootstrap/card";
+@import "../../_sass/bootstrap/carousel";
+@import "../../_sass/bootstrap/close";
+@import "../../_sass/bootstrap/dropdown";
+@import "../../_sass/bootstrap/forms";
+@import "../../_sass/bootstrap/list-group";
+@import "../../_sass/bootstrap/modal";
+@import "../../_sass/bootstrap/nav";
+@import "../../_sass/bootstrap/navbar";
+@import "../../_sass/bootstrap/offcanvas";
+// @import "../../_sass/bootstrap/pagination";
+@import "../../_sass/bootstrap/placeholders";
+@import "../../_sass/bootstrap/tooltip"; 
+@import "../../_sass/bootstrap/popover";
+@import "../../_sass/bootstrap/progress";
+@import "../../_sass/bootstrap/spinners"; 
+@import "../../_sass/bootstrap/tables"; 
+@import "../../_sass/bootstrap/toasts"; 
+@import "../../_sass/bootstrap/transitions";
+@import "../../_sass/bootstrap/utilities/api"; 
+
+@import "../../_sass/kitchen-sink"; // /_sass/_kitchen-sink.scss - demos grab bag from bootstrap
+
+@import "../../_sass/aos"; // /_sass/_aos.scss contains animation on scroll styles
+
+@import "../../_sass/darkmode";  // /_sass/_darkmode.scss = custom styles per project 
+
+@import "../../_sass/header";  // /_sass/_header.scss = header styles nav menu
+
+@import "../../_sass/main";  // /_sass/main.scss = custom styles per project 

@@ -100,12 +100,14 @@ body {
 .t-c-scale-color {
   padding: 5px 8px;
   font-weight: 500;
-  width: 70px;
-  height: 20px;
-  line-height: 20px;
+  font-size: 14px;
+  width: 60px;
+  height: 18px;
+  line-height: 18px;
 }
 
 .t-c-scale-label {
+  font-size: 14px;
   font-weight: 500;
   line-height: 20px;
 }

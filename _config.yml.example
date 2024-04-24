@@ -1,0 +1,34 @@
+# Build settings
+# markdown: kramdown
+# theme: minima
+
+# Bootstrap 5 settings
+sass:
+  style: compressed
+  load_paths:
+    - _sass
+    - _sass/bootstrap
+    - _sass-math
+
+# Plugins
+plugins:
+  - jekyll-feed
+  - jekyll-seo-tag
+
+# Exclude files/folders from processing
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - node_modules
+  - vendor
+  - LICENSE
+  - README.md
+
+# Development settings
+defaults:
+  - scope:
+      path: ""
+      type: "posts"
+    values:
+      # layout: "post"
+      author_profile: true
