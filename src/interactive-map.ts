@@ -5,7 +5,8 @@ import { buildScale, COLOR_SCALES, MAP_COLORS } from './scale.ts';
 
 export class InteractiveMap {
   private svg;
-  private geoGenerator: any
+  private geoGenerator: any;
+  private path: any;
   private indicatorFilter: IndicatorFilter;
   private geoJsonData: any;
   private countriesScores: ICountryDataEntry[] = [];
@@ -13,6 +14,11 @@ export class InteractiveMap {
   private readonly SVG_WIDTH: number = 700;
   private readonly SVG_HEIGHT: number = 700;
   private tooltip: any;
+
+  private ISLAND_LABEL_OFFSET_X: number = 25;
+  private LABEL_DEFAULT_FONT_SIZE: number = 11;
+
+  private readonly ASSETS_DIR: string = './assets/map/data';
 
   constructor (svgElement: HTMLElement) {
     this.svg = d3.select(svgElement);
@@ -29,6 +35,7 @@ export class InteractiveMap {
     buildScale();
     this.setCurrentCountriesIndicators();
     this.generateMap();
+    this.generateMapLabels();
     this.createTooltip();
   }
 
@@ -55,11 +62,11 @@ export class InteractiveMap {
   }
 
   private async loadGeoJson (): Promise<any> {
-    return d3.json('output/africaWithScore.geojson');
+    return d3.json(`${this.ASSETS_DIR}/africaWithScore.geojson`);
   }
 
   private async loadCountriesScore (): Promise<any> {
-    return d3.json('output/countries-data.json');
+    return d3.json(`${this.ASSETS_DIR}/countries-data.json`);
   }
 
   private getScaleColorFromValue (countryValue: Nullable<number>): string {
@@ -79,7 +86,8 @@ export class InteractiveMap {
     let projection: d3.GeoProjection = d3
       .geoMercator()
       .fitExtent([[0, 0], [this.SVG_WIDTH, this.SVG_HEIGHT]], this.geoJsonData);
-    this.geoGenerator = d3.geoPath().projection(projection);
+    this.path = d3.geoPath();
+    this.geoGenerator = this.path.projection(projection);
 
     this.svg
       .append('g')
@@ -95,7 +103,10 @@ export class InteractiveMap {
         return this.getScaleColorFromValue(d.properties.score);
       })
       .attr('d', this.geoGenerator)
-      .style('stroke', '#000')
+      .style('stroke', d => {
+        // @ts-ignore
+        return d.properties.isIsland ? '#000' : '#fff'
+      })
       .on('mouseover', (e, d) => {
         this.handleMouseOver(e, d);
       })
@@ -107,30 +118,49 @@ export class InteractiveMap {
       })
   }
 
+  private generateMapLabels (): void {
+    this.svg.append('g')
+      .selectAll('labels')
+      .data(this.geoJsonData.features)
+      .enter()
+      .append('text')
+      .attr('x', (d) => {
+        return this.path.centroid(d)[0]
+      })
+      .attr('y', (d) => {
+        // @ts-ignore
+        return this.path.centroid(d)[1] + (d.properties.isIsland ? this.ISLAND_LABEL_OFFSET_X : 0)
+      })
+      .html(d => {
+        // @ts-ignore
+        return d.properties.name;
+      })
+      .attr('text-anchor', 'middle')
+      .attr('alignment-baseline', 'central')
+      .style('font-size', d => {
+        // @ts-ignore
+        return d.properties.labelFontSize ?? this.LABEL_DEFAULT_FONT_SIZE;
+      })
+      .style('fill', '#000')
+  }
+
   createTooltip (): void {
     this.tooltip = d3.select('body')
       .append('div')
-      .style('position', 'absolute')
-      .style('visibility', 'hidden')
-      .style('background-color', '#fff')
-      .style('color', 'black')
-      .style('z-index', '10')
-      .style('border', 'solid')
-      .style('border-color', '#000')
-      .style('border-width', '0px')
-      .style('padding', '10px')
-      .style('box-shadow', '0px 0px 4px #000')
-      .attr('id', 'tooltip');
+      .attr('class', 'lm-c-tooltip');
+  }
+
+  roundToFirstDecimal (value: number): number {
+    return parseFloat(value.toFixed(1));
   }
 
   handleMouseOver (event: any, d: any) {
     d3.select(event.currentTarget).attr('stroke', 'black');
     this.tooltip
       .style('visibility', 'visible')
-      // .style('top', (event.pageY) - 40 + 'px').style('left', (event.pageX) + 10 + 'px')
       .html(`
           <h4 class="t-c-tooltip__label">${d.properties.name}</h4>
-          <span class="t-c-tooltip__score">${d.properties.score != null ? d.properties.score.toFixed(1) : 'MD'}</span>`);
+          <span class="t-c-tooltip__score">${d.properties.score != null ? this.roundToFirstDecimal(d.properties.score) : 'No Data'}</span>`);
   };
 
   handleMouseMove (event: any): void {

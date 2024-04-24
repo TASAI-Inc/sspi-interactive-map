@@ -1,0 +1,19 @@
+{
+  "name": "sass-math",
+  "version": "1.0.0",
+  "description": "Sass math functions.",
+  "keywords": [
+    "sass",
+    "math"
+  ],
+  "author": "Laza Bogdan <laza.bogdan@macro-net.ro>",
+  "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/themekit/sass-math.git"
+  },
+  "bugs": {
+    "url": "https://github.com/themekit/sass-math/issues"
+  },
+  "homepage": "https://github.com/themekit/sass-math#readme"
+}

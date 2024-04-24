@@ -1,0 +1,138 @@
+// note custom styles go here
+
+// note Global **********************
+// No media query necessary for xs breakpoint as it's effectively `@media (min-width: 0) { ... }
+// @include media-breakpoint-up(sm) { ... }
+// @include media-breakpoint-up(md) { ... }
+// @include media-breakpoint-up(lg) { ... }
+// @include media-breakpoint-up(xl) { ... }
+// @include media-breakpoint-up(xxl) { ... }
+
+// screen reader only
+.sr-only {
+    position: absolute;
+    left: -10000px;
+    top: auto;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+}
+
+// note Body, Main, Article, Cards, fields, etc. **********************
+
+main {
+    padding-bottom: 5rem;
+}
+
+.card {
+    margin-bottom: 2rem;
+}
+
+// note home page
+
+// top_banner
+.top_banner {
+    background-color: #f3ce00;
+}
+
+// note carousel on home page
+.carousel.home {
+    margin-top: 0;
+    background: $gray-800;
+    @include media-breakpoint-up(lg) {
+        margin-top: -4.25rem;
+    }
+
+    @include media-breakpoint-up(sm) {
+        min-height: 250px;
+    }
+    @include media-breakpoint-up(md) {
+        min-height: 305px;
+    }
+
+    @include media-breakpoint-up(xl) {
+        min-height: 730px;
+    }
+
+    img.w_caption {
+        width: 80px;
+
+        @include media-breakpoint-up(md) {
+            width: 200px;
+        }
+    }
+}
+// note Footer. **********************
+
+// note Footer **********************
+.footer_wrapper {
+    background-color: $gray-600;
+}
+
+footer {
+    padding-top: 1.5rem;
+    padding-bottom: 4rem;
+    color: $white;
+    font-size: 94%;
+
+    h1,
+    h2,
+    h3,
+    h4,
+    p {
+        padding-right: 1rem;
+        padding-left: 1rem;
+        color: $white;
+        // font-size: 94%;
+        a {
+            text-decoration: none;
+            &:hover {
+                text-decoration: none;
+                color: $dreambays_gold_light;
+            }
+        }
+    }
+
+    h1,
+    h2,
+    h3,
+    h4,
+    h5 {
+        font-family: $font-family-serif;
+    }
+
+    // note footer social media icons
+    .footer_icons {
+        -webkit-transition: all ease-out 0.125s;
+        -moz-transition: all ease-out 0.125s;
+        -o-transition: all ease-out 0.125s;
+        transition: all ease-out 0.125s;
+        font-size: 178%;
+
+        a {
+            color: $white;
+            margin: 2rem 1rem 2rem 1rem;
+            &:hover {
+                text-decoration: none;
+                color: $dreambays_gold_light;
+            }
+        }
+    }
+    .credits_last_line {
+        text-transform: none;
+        font-size: 80%;
+        margin-top: 0.25rem;
+    }
+
+    a {
+        color: $white;
+
+        &:hover {
+            color: $gray-800;
+        }
+    }
+
+    p {
+        margin-bottom: 0.25rem;
+    }
+}

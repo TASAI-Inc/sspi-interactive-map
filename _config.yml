@@ -1,0 +1,34 @@
+url: "" # the base hostname & protocol for your site, e.g. http://example.com
+baseurl: "/tasaisspi2024" # index - the subpath of your site, if meant to work solo in subfolder use {{ site.baseurl }} for all calls to /assets and other subfolders
+title: "" # the name of your site, e.g. ACME Corp.
+
+sass:
+  load_paths:
+    - assets/css/main
+  style: compressed
+
+
+collections:
+  collection_artworks:
+    output: false
+    permalink: :path
+
+
+destination: ./dist
+exclude: [/*.php, /*.lock, /*.json, /*.css, /template-parts, /languages, /js, /inc, /wordpress, /functions]
+
+# plugins:
+#   - jekyll-autoprefixer
+
+autoprefixer:
+  browsers:
+    - last 4 versions
+
+#    - Safari > 2
+#  collections:
+#   collection_paintings:
+#     output: false
+#     permalink: :path
+
+# destination: ./_site_build_tasaisspi2024_php
+# exclude: [/*.html]

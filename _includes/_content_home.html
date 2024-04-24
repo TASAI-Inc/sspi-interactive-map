@@ -1,0 +1,424 @@
+<!-- note start main -->
+<div class="top_banner">
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-md-11 col-lg-10">
+        <img src="assets/img/sspi_banner.jpg" class="w-100 img-fluid" />
+      </div>
+    </div>
+  </div>
+</div>
+
+<main role="main" class="main home">
+
+  <div class="container py-4">
+
+    <!-- note tasai sspi stuff here -->
+    <div class="row py-4 justify-content-center">
+      <div class="col-md-10">
+        <!-- <img src="https://www.tasai.org/tasai_Logo.svg" style="max-width: 420px;" /> -->
+
+        <h1 class="text-center">TASAI - SSPI <small>(mini Site)</small></h1>
+
+        <br /> <br />
+        <div class="card">
+          <div class="card-body text-center">
+            <p>Cover page linked pdf here
+              <br />
+              Cover page linked pdf here
+              <br />
+              Cover page linked pdf here
+              <br />
+              Cover page linked pdf here
+              <br />
+              Cover page linked pdf here
+              <br />
+            </p>
+          </div>
+        </div>
+        <br />
+
+        <br /> <br /> <br />
+
+        <!-- todo map here -->
+        <section>
+          <div class="t-c-map-filter">
+            <div class="form-group">
+              <label for="js-indicator-filter" class="t-c-map-filter__label">Indicator</label>
+              <select class="t-c-map-filter__input" id="js-indicator-filter"></select>
+            </div>
+          </div>
+
+          <div class="t-c-map-container">
+            <div id="js-scale-container" class="t-c-scale-container"></div>
+            <svg class="t-c-map" id="js-interactive-map"></svg>
+          </div>
+        </section>
+      </div>
+    </div>
+  </div>
+
+
+  <div class="container mt-3">
+    <div class="row justify-content-center">
+      <div class="col-md-10">
+        <h2>Indicators</h2>
+        <p>
+          Praesent purus purus, ultrices et libero quis, molestie auctor odio. Praesent dictum, erat et molestie vulputate, massa dolor laoreet nisl, ac tempor diam metus vitae lorem. Vivamus lorem nibh, pretium a maximus a, rutrum nec sapien. Nam sollicitudin sem justo, in tristique mi consequat eget. Quisque ullamcorper metus odio. Maecenas eu dictum ligula. Sed dignissim neque quis dolor molestie varius id non dolor. Sed venenatis ac ante ac sollicitudin. Ut sed arcu laoreet, viverra ex eu, volutpat magna. Ut ac tellus vel dolor tincidunt tempus. Nulla vitae eros feugiat, congue arcu eu, eleifend sem. Curabitur elit mauris, efficitur quis tortor quis, suscipit interdum orci. Nulla vel ultrices turpis, ac lacinia ligula. Interdum et malesuada fames ac ante ipsum primis in faucibus. Integer quis cursus ante.
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <div class="container mt-3">
+    <div class="row justify-content-center">
+      <div class="col-md-10">
+
+        <p class="lead"><strong>Accordions:</strong></p>
+        <div class="accordion accordion-flush" id="accordionPanelsStayOpenExample">
+
+          <div class="accordion-item">
+            <h2 class="accordion-header" id="panelsStayOpen-heading01">
+              <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapse01" aria-expanded="true" aria-controls="panelsStayOpen-collapse01">
+                Indicator 1. Quality of the variety release and registration process
+              </button>
+            </h2>
+            <div id="panelsStayOpen-collapse01" class="accordion-collapse collapse" aria-labelledby="panelsStayOpen-heading01">
+              <div class="accordion-body">
+                {% include accordions_01.html %}
+              </div>
+            </div>
+          </div>
+          <div class="accordion-item">
+            <h2 class="accordion-header" id="panelsStayOpen-heading02">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapse02" aria-expanded="false" aria-controls="panelsStayOpen-collapse02">
+                Indicator 2. Number of varieties released in the last three years (2020-2022)
+              </button>
+            </h2>
+            <div id="panelsStayOpen-collapse02" class="accordion-collapse collapse" aria-labelledby="panelsStayOpen-heading02">
+              <div class="accordion-body">
+                {% include accordions_02.html %}
+              </div>
+            </div>
+          </div>
+          <div class="accordion-item">
+            <h2 class="accordion-header" id="panelsStayOpen-heading03">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapse03" aria-expanded="false" aria-controls="panelsStayOpen-collapse03">
+                Indicator 3. Adequacy of the national agricultural research institutes' breeding programs
+              </button>
+            </h2>
+            <div id="panelsStayOpen-collapse03" class="accordion-collapse collapse" aria-labelledby="panelsStayOpen-heading03">
+              <div class="accordion-body">
+                {% include accordions_03.html %}
+              </div>
+            </div>
+          </div>
+
+          <div class="accordion-item">
+            <h2 class="accordion-header" id="panelsStayOpen-heading04">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapse04" aria-expanded="false" aria-controls="panelsStayOpen-collapse04">
+                Indicator 4. Status of the national program coordinating activities on Plant Genetic Resources for Food and Agriculture
+              </button>
+            </h2>
+            <div id="panelsStayOpen-collapse04" class="accordion-collapse collapse" aria-labelledby="panelsStayOpen-heading04">
+              <div class="accordion-body">
+                {% include accordions_04.html %}
+              </div>
+            </div>
+          </div>
+
+          <div class="accordion-item">
+            <h2 class="accordion-header" id="panelsStayOpen-heading05">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapse05" aria-expanded="false" aria-controls="panelsStayOpen-collapse05">
+                Indicator 5. Adequacy of Early Generation Seed
+              </button>
+            </h2>
+            <div id="panelsStayOpen-collapse05" class="accordion-collapse collapse" aria-labelledby="panelsStayOpen-heading05">
+              <div class="accordion-body">
+                {% include accordions_05.html %}
+              </div>
+            </div>
+          </div>
+
+          <div class="accordion-item">
+            <h2 class="accordion-header" id="panelsStayOpen-heading06">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapse06" aria-expanded="false" aria-controls="panelsStayOpen-collapse06">
+                Indicator 6. Availability of varietal choice to farmers
+              </button>
+            </h2>
+            <div id="panelsStayOpen-collapse06" class="accordion-collapse collapse" aria-labelledby="panelsStayOpen-heading06">
+              <div class="accordion-body">
+                {% include accordions_06.html %}
+              </div>
+            </div>
+          </div>
+
+
+          <div class="accordion-item">
+            <h2 class="accordion-header" id="panelsStayOpen-heading07">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapse07" aria-expanded="false" aria-controls="panelsStayOpen-collapse07">
+                Indicator 7. Utilization of quality commercial seed by farmers
+              </button>
+            </h2>
+            <div id="panelsStayOpen-collapse07" class="accordion-collapse collapse" aria-labelledby="panelsStayOpen-heading07">
+              <div class="accordion-body">
+                {% include accordions_07.html %}
+              </div>
+            </div>
+          </div>
+
+
+          <div class="accordion-item">
+            <h2 class="accordion-header" id="panelsStayOpen-heading08">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapse08" aria-expanded="false" aria-controls="panelsStayOpen-collapse08">
+                Indicator 8. Adequacy of seed import process
+              </button>
+            </h2>
+            <div id="panelsStayOpen-collapse08" class="accordion-collapse collapse" aria-labelledby="panelsStayOpen-heading08">
+              <div class="accordion-body">
+                {% include accordions_08.html %}
+              </div>
+            </div>
+          </div>
+
+
+          <div class="accordion-item">
+            <h2 class="accordion-header" id="panelsStayOpen-heading09">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapse09" aria-expanded="false" aria-controls="panelsStayOpen-collapse09">
+                Indicator 9. Adequacy of agro-dealer networks
+              </button>
+            </h2>
+            <div id="panelsStayOpen-collapse09" class="accordion-collapse collapse" aria-labelledby="panelsStayOpen-heading09">
+              <div class="accordion-body">
+                {% include accordions_09.html %}
+              </div>
+            </div>
+          </div>
+
+
+          <div class="accordion-item">
+            <h2 class="accordion-header" id="panelsStayOpen-heading10">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapse10" aria-expanded="false" aria-controls="panelsStayOpen-collapse10">
+                Indicator 10. Availability of seed in small packages
+              </button>
+            </h2>
+            <div id="panelsStayOpen-collapse10" class="accordion-collapse collapse" aria-labelledby="panelsStayOpen-heading10">
+              <div class="accordion-body">
+                {% include accordions_10.html %}
+              </div>
+            </div>
+          </div>
+
+
+          <div class="accordion-item">
+            <h2 class="accordion-header" id="panelsStayOpen-heading11">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapse11" aria-expanded="false" aria-controls="panelsStayOpen-collapse11">
+                Indicator 11. Status of national seed policy instruments
+              </button>
+            </h2>
+            <div id="panelsStayOpen-collapse11" class="accordion-collapse collapse" aria-labelledby="panelsStayOpen-heading11">
+              <div class="accordion-body">
+                {% include accordions_11.html %}
+              </div>
+            </div>
+          </div>
+
+
+          <div class="accordion-item">
+            <h2 class="accordion-header" id="panelsStayOpen-heading12">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapse12" aria-expanded="false" aria-controls="panelsStayOpen-collapse12">
+                Indicator 12. Status of alignment of national seed policy instruments with harmonized regional seed regulations
+              </button>
+            </h2>
+            <div id="panelsStayOpen-collapse12" class="accordion-collapse collapse" aria-labelledby="panelsStayOpen-heading12">
+              <div class="accordion-body">
+                {% include accordions_12.html %}
+              </div>
+            </div>
+          </div>
+
+
+          <div class="accordion-item">
+            <h2 class="accordion-header" id="panelsStayOpen-heading13">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapse13" aria-expanded="false" aria-controls="panelsStayOpen-collapse13">
+                Indicator 13. Status of adoption of national biosafety frameworks to guide plant breeding and seed production
+              </button>
+            </h2>
+            <div id="panelsStayOpen-collapse13" class="accordion-collapse collapse" aria-labelledby="panelsStayOpen-heading13">
+              <div class="accordion-body">
+                {% include accordions_13.html %}
+              </div>
+            </div>
+          </div>
+
+
+          <div class="accordion-item">
+            <h2 class="accordion-header" id="panelsStayOpen-heading14">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapse14" aria-expanded="false" aria-controls="panelsStayOpen-collapse14">
+                Indicator 14. Status of Farmer-Managed Seed Systems
+              </button>
+            </h2>
+            <div id="panelsStayOpen-collapse14" class="accordion-collapse collapse" aria-labelledby="panelsStayOpen-heading14">
+              <div class="accordion-body">
+                {% include accordions_14.html %}
+              </div>
+            </div>
+          </div>
+
+
+          <div class="accordion-item">
+            <h2 class="accordion-header" id="panelsStayOpen-heading15">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapse15" aria-expanded="false" aria-controls="panelsStayOpen-collapse15">
+                Indicator 15. Adequacy of seed inspection services
+              </button>
+            </h2>
+            <div id="panelsStayOpen-collapse15" class="accordion-collapse collapse" aria-labelledby="panelsStayOpen-heading15">
+              <div class="accordion-body">
+                {% include accordions_15.html %}
+              </div>
+            </div>
+          </div>
+
+
+          <div class="accordion-item">
+            <h2 class="accordion-header" id="panelsStayOpen-heading16">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapse16" aria-expanded="false" aria-controls="panelsStayOpen-collapse16">
+                Indicator 16. Adequacy of government efforts to combat counterfeit seed
+              </button>
+            </h2>
+            <div id="panelsStayOpen-collapse16" class="accordion-collapse collapse" aria-labelledby="panelsStayOpen-heading16">
+              <div class="accordion-body">
+                {% include accordions_16.html %}
+              </div>
+            </div>
+          </div>
+
+
+          <div class="accordion-item">
+            <h2 class="accordion-header" id="panelsStayOpen-heading17">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapse17" aria-expanded="false" aria-controls="panelsStayOpen-collapse17">
+                Indicator 17. Adequacy of the national seed trade associations
+              </button>
+            </h2>
+            <div id="panelsStayOpen-collapse17" class="accordion-collapse collapse" aria-labelledby="panelsStayOpen-heading17">
+              <div class="accordion-body">
+                {% include accordions_17.html %}
+              </div>
+            </div>
+          </div>
+
+
+
+
+
+        </div>
+
+
+
+      </div>
+    </div>
+  </div>
+
+  <br /> <br /> <br /> <br /> <br />
+
+  <div class="container mt-3">
+    <div class="row justify-content-center">
+      <div class="col-md-10">
+        <div class="card">
+          <div class="card-body">
+            <p class="lead"><strong>List opening Modals:</strong></p>
+            <p>
+              <a href="#" class="" data-bs-toggle="modal" data-bs-target="#modal_001"><strong>Indicator 1. Quality of the variety release and registration process</strong></a>
+            </p>
+            <p>
+              <a href="#" class="" data-bs-toggle="modal" data-bs-target="#modal_002"><strong>Indicator 2. Number of varieties released in the last three years (2020-2022)</strong></a>
+            </p>
+
+            <p>
+              <a href="#" class="" data-bs-toggle="modal" data-bs-target="#modal_003"><strong>Indicator 3. Adequacy of the national agricultural research institutes' breeding programs</strong></a>
+            </p>
+
+            <p>
+              <a href="#" class="" data-bs-toggle="modal" data-bs-target="#modal_004"><strong>Indicator 4. Status of the national program coordinating activities on Plant Genetic Resources for Food and Agriculture</strong></a>
+            </p>
+
+            <p>
+              <a href="#" class="" data-bs-toggle="modal" data-bs-target="#modal_005"><strong>Indicator 5. Adequacy of the national agricultural research institutes' breeding programs</strong></a>
+            </p>
+
+            <p>
+              <a href="#" class="" data-bs-toggle="modal" data-bs-target="#modal_006"><strong>Indicator 6. Availability of varietal choice to farmers</strong></a>
+            </p>
+
+            <p>
+              <a href="#" class="" data-bs-toggle="modal" data-bs-target="#modal_007"><strong>Indicator 7. Utilization of quality commercial seed by farmers</strong></a>
+            </p>
+
+            <p>
+              <a href="#" class="" data-bs-toggle="modal" data-bs-target="#modal_008"><strong>Indicator 8. Adequacy of seed import process</strong></a>
+            </p>
+
+            <p>
+              <a href="#" class="" data-bs-toggle="modal" data-bs-target="#modal_009"><strong>Indicator 9. Adequacy of agro-dealer networks</strong></a>
+            </p>
+
+            <p>
+              <a href="#" class="" data-bs-toggle="modal" data-bs-target="#modal_010"><strong>Indicator 10: Availability of seed in small packages</strong></a>
+            </p>
+
+            <p>
+              <a href="#" class="" data-bs-toggle="modal" data-bs-target="#modal_011"><strong>Indicator 11. Status of national seed policy instruments</strong></a>
+            </p>
+
+            <p>
+              <a href="#" class="" data-bs-toggle="modal" data-bs-target="#modal_012"><strong>Indicator 12. Status of alignment of national seed policy instruments with harmonized regional seed regulations</strong></a>
+            </p>
+
+            <p>
+              <a href="#" class="" data-bs-toggle="modal" data-bs-target="#modal_013"><strong> Indicator 13. Status of adoption of national biosafety frameworks to guide plant breeding and seed production</strong></a>
+            </p>
+
+            <p>
+              <a href="#" class="" data-bs-toggle="modal" data-bs-target="#modal_014"><strong>Indicator 14. Status of Farmer-Managed Seed Systems</strong></a>
+            </p>
+
+            <p>
+              <a href="#" class="" data-bs-toggle="modal" data-bs-target="#modal_015"><strong>Indicator 15. Adequacy of seed inspection services</strong></a>
+            </p>
+
+            <p>
+              <a href="#" class="" data-bs-toggle="modal" data-bs-target="#modal_016"><strong>Indicator 16. Adequacy of government efforts to combat counterfeit seed</strong></a>
+            </p>
+
+            <p>
+              <a href="#" class="" data-bs-toggle="modal" data-bs-target="#modal_017"><strong>Indicator 17: Adequacy of the national seed trade associations</strong></a>
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+  <!-- Modal here modals_00 -->
+  {% include modals_01.html %}
+  {% include modals_02.html %}
+  {% include modals_03.html %}
+  {% include modals_04.html %}
+  {% include modals_05.html %}
+  {% include modals_06.html %}
+  {% include modals_07.html %}
+  {% include modals_08.html %}
+  {% include modals_09.html %}
+  {% include modals_10.html %}
+  {% include modals_11.html %}
+  {% include modals_12.html %}
+  {% include modals_13.html %}
+  {% include modals_14.html %}
+  {% include modals_15.html %}
+  {% include modals_16.html %}
+  {% include modals_17.html %}
+
+
+</main>

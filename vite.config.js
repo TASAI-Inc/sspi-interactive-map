@@ -10,8 +10,8 @@ export default defineConfig({
     viteStaticCopy({
       targets: [
         {
-          src: 'output',
-          dest: './'
+          src: 'output/**/*.*',
+          dest: 'data'
         }
       ]
     })
@@ -22,9 +22,15 @@ export default defineConfig({
     }
   },
   build: {
+    outDir: './assets/map',
     rollupOptions: {
       input: {
-        main: resolve(__dirname, 'map.html')
+        map: resolve(__dirname, 'map.html')
+      },
+      output: {
+        entryFileNames: `[name].js`,
+        chunkFileNames: `[name].js`,
+        assetFileNames: `[name].[ext]`
       }
     }
   }
