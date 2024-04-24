@@ -20,8 +20,11 @@ export interface IGeoJsonDataFeature {
   properties: {
     name: string;
     code: string;
+    hoverableName?: boolean;
     isIsland?: boolean;
     labelFontSize?: number;
+    xOffset: number;
+    yOffset: number;
     cartodb_id: string;
     score: number | null;
   },
