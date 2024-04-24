@@ -14,7 +14,7 @@ collections:
     permalink: :path
 
 
-destination: ./dist
+destination: ./_site_build_tasaisspi2024_html
 exclude: [/*.php, /*.lock, /*.json, /*.css, /template-parts, /languages, /js, /inc, /wordpress, /functions]
 
 # plugins:
