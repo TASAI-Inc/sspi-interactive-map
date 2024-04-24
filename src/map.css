@@ -47,10 +47,10 @@ a:hover {
 
 .t-c-map-container {
   margin: 0 auto;
-  padding: 2rem 4rem;
+  padding: 2rem 0;
   text-align: center;
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   align-items: center;
 }
 
@@ -86,22 +86,24 @@ a:hover {
 
 .t-c-scale-container {
   display: flex;
-  flex-direction: column;
-  row-gap: 3px;
+  flex-direction: row;
+  width: 100%;
+  justify-content: center;
 }
 
 .t-c-scale {
   display: flex;
-  flex-direction: row;
-  column-gap: 10px;
+  flex-direction: column;
+  row-gap: 5px;
   align-items: center;
+  width: 130px;
 }
 
 .t-c-scale-color {
-  padding: 5px 8px;
+  padding: 5px 0;
   font-weight: 500;
   font-size: 14px;
-  width: 60px;
+  width: 100%;
   height: 18px;
   line-height: 18px;
 }
