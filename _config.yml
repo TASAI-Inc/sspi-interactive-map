@@ -1,5 +1,5 @@
-url: "" # the base hostname & protocol for your site, e.g. http://example.com
-baseurl: "/tasaisspi2024" # index - the subpath of your site, if meant to work solo in subfolder use {{ site.baseurl }} for all calls to /assets and other subfolders
+url: https://tasai-inc.github.io # the base hostname & protocol for your site, e.g. http://example.com
+baseurl: / # sspi-interactive-map/ - index - the subpath of your site, if meant to work solo in subfolder use {{ site.baseurl }} for all calls to /assets and other subfolders
 title: "" # the name of your site, e.g. ACME Corp.
 
 sass:
