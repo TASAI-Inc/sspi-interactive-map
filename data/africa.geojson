@@ -6,6 +6,8 @@
       "properties": {
         "name": "Algeria",
         "code": "DZA",
+        "isIsland":false,
+        "labelFontSize":11,
         "cartodb_id": 1
       },
       "geometry": {
@@ -151,6 +153,8 @@
       "properties": {
         "name": "Angola",
         "code": "AGO",
+        "isIsland": false,
+        "labelFontSize": 11,
         "cartodb_id": 2
       },
       "geometry": {
@@ -292,6 +296,8 @@
       "properties": {
         "name": "Benin",
         "code": "BEN",
+        "isIsland": false,
+        "labelFontSize": 11,
         "cartodb_id": 3
       },
       "geometry": {
@@ -347,6 +353,8 @@
       "properties": {
         "name": "Botswana",
         "code": "BWA",
+        "isIsland": false,
+        "labelFontSize": 11,
         "cartodb_id": 4
       },
       "geometry": {
@@ -438,6 +446,8 @@
       "properties": {
         "name": "Burkina Faso",
         "code": "BFA",
+        "isIsland": false,
+        "labelFontSize": 11,
         "cartodb_id": 5
       },
       "geometry": {
@@ -525,6 +535,8 @@
       "properties": {
         "name": "Burundi",
         "code": "BDI",
+        "isIsland": false,
+        "labelFontSize": 11,
         "cartodb_id": 6
       },
       "geometry": {
@@ -566,6 +578,8 @@
       "properties": {
         "name": "Cameroon",
         "code": "CMR",
+        "isIsland": false,
+        "labelFontSize": 11,
         "cartodb_id": 7
       },
       "geometry": {
@@ -690,6 +704,7 @@
         "name": "Cape Verde",
         "code": "CPV",
         "isIsland": true,
+        "labelFontSize": 11,
         "cartodb_id": 8
       },
       "geometry": {
@@ -735,6 +750,8 @@
       "properties": {
         "name": "Central<br/>African<br/>Republic",
         "code": "CAF",
+        "isIsland": false,
+        "labelFontSize": 11,
         "cartodb_id": 9
       },
       "geometry": {
@@ -862,6 +879,8 @@
       "properties": {
         "name": "Chad",
         "code": "TCD",
+        "isIsland": false,
+        "labelFontSize": 11,
         "cartodb_id": 10
       },
       "geometry": {
@@ -974,6 +993,7 @@
         "name": "Comoros",
         "code": "COM",
         "isIsland": true,
+        "labelFontSize": 11,
         "cartodb_id": 11
       },
       "geometry": {
@@ -996,6 +1016,8 @@
       "properties": {
         "name": "Republic of the Congo",
         "code": "COG",
+        "isIsland": false,
+        "labelFontSize": 11,
         "cartodb_id": 12
       },
       "geometry": {
@@ -1114,6 +1136,8 @@
       "properties": {
         "name": "Djibouti",
         "code": "DJI",
+        "isIsland": false,
+        "labelFontSize": 11,
         "cartodb_id": 13
       },
       "geometry": {
@@ -1151,6 +1175,8 @@
       "properties": {
         "name": "Egypt",
         "code": "EGY",
+        "isIsland": false,
+        "labelFontSize": 11,
         "cartodb_id": 14
       },
       "geometry": {
@@ -1251,6 +1277,8 @@
       "properties": {
         "name": "Equatorial Guinea",
         "code": "GNQ",
+        "isIsland": false,
+        "labelFontSize": 11,
         "cartodb_id": 15
       },
       "geometry": {
@@ -1293,6 +1321,8 @@
       "properties": {
         "name": "Eritrea",
         "code": "ERI",
+        "isIsland": false,
+        "labelFontSize": 11,
         "cartodb_id": 16
       },
       "geometry": {
@@ -1370,6 +1400,8 @@
       "properties": {
         "name": "Ethiopia",
         "code": "ETH",
+        "isIsland": false,
+        "labelFontSize": 11,
         "cartodb_id": 17
       },
       "geometry": {
@@ -1489,6 +1521,8 @@
       "properties": {
         "name": "Gabon",
         "code": "GAB",
+        "isIsland": false,
+        "labelFontSize": 11,
         "cartodb_id": 18
       },
       "geometry": {
@@ -1578,6 +1612,8 @@
       "properties": {
         "name": "Gambia",
         "code": "GMB",
+        "isIsland": false,
+        "labelFontSize": 11,
         "cartodb_id": 19
       },
       "geometry": {
@@ -1615,6 +1651,8 @@
       "properties": {
         "name": "Ghana",
         "code": "GHA",
+        "isIsland": false,
+        "labelFontSize": 11,
         "cartodb_id": 20
       },
       "geometry": {
@@ -1686,6 +1724,8 @@
       "properties": {
         "name": "Guinea",
         "code": "GIN",
+        "isIsland": false,
+        "labelFontSize": 11,
         "cartodb_id": 22
       },
       "geometry": {
@@ -1791,6 +1831,8 @@
       "properties": {
         "name": "Guinea-Bissau",
         "code": "GNB",
+        "isIsland": false,
+        "labelFontSize": 11,
         "cartodb_id": 23
       },
       "geometry": {
@@ -1832,6 +1874,8 @@
       "properties": {
         "name": "Côte d'Ivoire",
         "code": "CIV",
+        "isIsland": false,
+        "labelFontSize": 11,
         "cartodb_id": 24
       },
       "geometry": {
@@ -1923,6 +1967,8 @@
       "properties": {
         "name": "Kenya",
         "code": "KEN",
+        "isIsland": false,
+        "labelFontSize": 11,
         "cartodb_id": 26
       },
       "geometry": {
@@ -1996,6 +2042,8 @@
       "properties": {
         "name": "Lesotho",
         "code": "LSO",
+        "isIsland": false,
+        "labelFontSize": 11,
         "cartodb_id": 27
       },
       "geometry": {
@@ -2031,6 +2079,8 @@
       "properties": {
         "name": "Liberia",
         "code": "LBR",
+        "isIsland": false,
+        "labelFontSize": 11,
         "cartodb_id": 28
       },
       "geometry": {
@@ -2086,6 +2136,8 @@
       "properties": {
         "name": "Libya",
         "code": "LBY",
+        "isIsland": false,
+        "labelFontSize": 11,
         "cartodb_id": 29
       },
       "geometry": {
@@ -2194,6 +2246,8 @@
       "properties": {
         "name": "Madagascar",
         "code": "MDG",
+        "isIsland": false,
+        "labelFontSize": 11,
         "cartodb_id": 30
       },
       "geometry": {
@@ -2324,6 +2378,8 @@
       "properties": {
         "name": "Malawi",
         "code": "MWI",
+        "isIsland": false,
+        "labelFontSize": 11,
         "cartodb_id": 31
       },
       "geometry": {
@@ -2406,6 +2462,8 @@
       "properties": {
         "name": "Mali",
         "code": "MLI",
+        "isIsland": false,
+        "labelFontSize": 11,
         "cartodb_id": 32
       },
       "geometry": {
@@ -2547,6 +2605,8 @@
       "properties": {
         "name": "Mauritania",
         "code": "MRT",
+        "isIsland": false,
+        "labelFontSize": 11,
         "cartodb_id": 33
       },
       "geometry": {
@@ -2627,6 +2687,8 @@
       "properties": {
         "name": "Morocco",
         "code": "MAR",
+        "isIsland": false,
+        "labelFontSize": 11,
         "cartodb_id": 36
       },
       "geometry": {
@@ -2715,6 +2777,8 @@
       "properties": {
         "name": "Mozambique",
         "code": "MOZ",
+        "isIsland": false,
+        "labelFontSize": 11,
         "cartodb_id": 37
       },
       "geometry": {
@@ -2887,6 +2951,8 @@
       "properties": {
         "name": "Namibia",
         "code": "NAM",
+        "isIsland": false,
+        "labelFontSize": 11,
         "cartodb_id": 38
       },
       "geometry": {
@@ -2993,6 +3059,8 @@
       "properties": {
         "name": "Niger",
         "code": "NER",
+        "isIsland": false,
+        "labelFontSize": 11,
         "cartodb_id": 39
       },
       "geometry": {
@@ -3098,6 +3166,8 @@
       "properties": {
         "name": "Nigeria",
         "code": "NGA",
+        "isIsland": false,
+        "labelFontSize": 11,
         "cartodb_id": 40
       },
       "geometry": {
@@ -3219,6 +3289,8 @@
       "properties": {
         "name": "Rwanda",
         "code": "RWA",
+        "isIsland": false,
+        "labelFontSize": 11,
         "cartodb_id": 43
       },
       "geometry": {
@@ -3262,8 +3334,9 @@
       "type": "Feature",
       "properties": {
         "name": "Sao Tome and Principe",
-        "isIsland": true,
         "code": "STP",
+        "isIsland": true,
+        "labelFontSize": 11,
         "cartodb_id": 44
       },
       "geometry": {
@@ -3286,6 +3359,8 @@
       "properties": {
         "name": "Senegal",
         "code": "SEN",
+        "isIsland": false,
+        "labelFontSize": 11,
         "cartodb_id": 45
       },
       "geometry": {
@@ -3363,8 +3438,9 @@
       "type": "Feature",
       "properties": {
         "name": "Seychelles",
-        "isIsland": true,
         "code": "SYC",
+        "isIsland": true,
+        "labelFontSize": 11,
         "cartodb_id": 46
       },
       "geometry": {
@@ -3386,6 +3462,8 @@
       "properties": {
         "name": "Sierra Leone",
         "code": "SLE",
+        "isIsland": false,
+        "labelFontSize": 11,
         "cartodb_id": 47
       },
       "geometry": {
@@ -3436,6 +3514,8 @@
       "properties": {
         "name": "Somalia",
         "code": "SOM",
+        "isIsland": false,
+        "labelFontSize": 11,
         "cartodb_id": 48
       },
       "geometry": {
@@ -3535,6 +3615,8 @@
       "properties": {
         "name": "South Africa",
         "code": "ZAF",
+        "isIsland": false,
+        "labelFontSize": 11,
         "cartodb_id": 49
       },
       "geometry": {
@@ -3723,6 +3805,8 @@
       "properties": {
         "name": "Sudan",
         "code": "SDN",
+        "isIsland": false,
+        "labelFontSize": 11,
         "cartodb_id": 1
       },
       "geometry": {
@@ -3976,6 +4060,8 @@
       "properties": {
         "name": "South Sudan",
         "code": "SSD",
+        "isIsland": false,
+        "labelFontSize": 11,
         "cartodb_id": 1
       },
       "geometry": {
@@ -4153,6 +4239,8 @@
       "properties": {
         "name": "Swaziland",
         "code": "SWZ",
+        "isIsland": false,
+        "labelFontSize": 11,
         "cartodb_id": 53
       },
       "geometry": {
@@ -4184,6 +4272,8 @@
       "properties": {
         "name": "Tanzania",
         "code": "TZA",
+        "isIsland": false,
+        "labelFontSize": 11,
         "cartodb_id": 54
       },
       "geometry": {
@@ -4320,6 +4410,8 @@
       "properties": {
         "name": "Togo",
         "code": "TGO",
+        "isIsland": false,
+        "labelFontSize": 11,
         "cartodb_id": 55
       },
       "geometry": {
@@ -4372,6 +4464,8 @@
       "properties": {
         "name": "Tunisia",
         "code": "TUN",
+        "isIsland": false,
+        "labelFontSize": 11,
         "cartodb_id": 56
       },
       "geometry": {
@@ -4450,6 +4544,8 @@
       "properties": {
         "name": "Uganda",
         "code": "UGA",
+        "isIsland": false,
+        "labelFontSize": 11,
         "cartodb_id": 57
       },
       "geometry": {
@@ -4522,6 +4618,8 @@
       "properties": {
         "name": "Western Sahara",
         "code": "ESH",
+        "isIsland": false,
+        "labelFontSize": 11,
         "cartodb_id": 58
       },
       "geometry": {
@@ -4572,6 +4670,8 @@
       "properties": {
         "name": "Democratic Republic of the Congo",
         "code": "COD",
+        "isIsland": false,
+        "labelFontSize": 11,
         "cartodb_id": 59
       },
       "geometry": {
@@ -4805,6 +4905,8 @@
       "properties": {
         "name": "Zambia",
         "code": "ZMB",
+        "isIsland": false,
+        "labelFontSize": 11,
         "cartodb_id": 60
       },
       "geometry": {
@@ -4936,6 +5038,8 @@
       "properties": {
         "name": "Zimbabwe",
         "code": "ZWE",
+        "isIsland": false,
+        "labelFontSize": 11,
         "cartodb_id": 61
       },
       "geometry": {

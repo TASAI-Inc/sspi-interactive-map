@@ -137,11 +137,28 @@ export class InteractiveMap {
       })
       .attr('text-anchor', 'middle')
       .attr('alignment-baseline', 'central')
+      .attr('class', d => {
+        const classes: string[] = ['t-c-map__country-name'];
+        // @ts-ignore
+        if (d.properties.isIsland) {
+          classes.push('t-c-map__country-name--hoverable');
+        }
+        return classes.join(' ');
+      })
       .style('font-size', d => {
         // @ts-ignore
         return d.properties.labelFontSize ?? this.LABEL_DEFAULT_FONT_SIZE;
       })
       .style('fill', '#000')
+      .on('mouseover', (e, d) => {
+        this.handleMouseOver(e, d);
+      })
+      .on('mousemove', (e) => {
+        this.handleMouseMove(e);
+      })
+      .on('mouseout', () => {
+        this.handleMouseOut();
+      })
   }
 
   createTooltip (): void {
@@ -154,8 +171,7 @@ export class InteractiveMap {
     return parseFloat(value.toFixed(1));
   }
 
-  handleMouseOver (event: any, d: any) {
-    d3.select(event.currentTarget).attr('stroke', 'black');
+  handleMouseOver (_event: any, d: any) {
     this.tooltip
       .style('visibility', 'visible')
       .html(`
