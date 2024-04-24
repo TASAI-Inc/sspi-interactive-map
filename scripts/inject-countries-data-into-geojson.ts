@@ -11,5 +11,5 @@ export async function injectCountriesDataIntoGeoJson (countriesData: ICountryDat
     feature.properties.score = null;
   });
 
-  await writeJson('africaWithScore.geojson', africaGeoJsonData);
+  await writeJson('../assets/map/data/africaWithScore.geojson', africaGeoJsonData);
 }

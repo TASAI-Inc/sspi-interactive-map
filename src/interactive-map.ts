@@ -15,9 +15,6 @@ export class InteractiveMap {
   private readonly SVG_HEIGHT: number = 700;
   private tooltip: any;
 
-  private ISLAND_LABEL_OFFSET_X: number = 25;
-  private LABEL_DEFAULT_FONT_SIZE: number = 11;
-
   private readonly ASSETS_DIR: string = './assets/map/data';
 
   constructor (svgElement: HTMLElement) {
@@ -124,24 +121,38 @@ export class InteractiveMap {
       .data(this.geoJsonData.features)
       .enter()
       .append('text')
-      .attr('x', (d) => {
-        return this.path.centroid(d)[0]
+      .attr('x', (d: any) => {
+        return this.path.centroid(d)[0] + d.properties.xOffset;
       })
-      .attr('y', (d) => {
-        // @ts-ignore
-        return this.path.centroid(d)[1] + (d.properties.isIsland ? this.ISLAND_LABEL_OFFSET_X : 0)
+      .attr('y', (d: any) => {
+        return this.path.centroid(d)[1] + d.properties.yOffset;
       })
-      .html(d => {
-        // @ts-ignore
-        return d.properties.name;
+      .html((d: any) => {
+        const nameParts: string[] = d.properties.name.split('<br/>');
+        return nameParts.map(namePart => `<tspan>${namePart}</tspan>`).join('');
       })
       .attr('text-anchor', 'middle')
       .attr('alignment-baseline', 'central')
-      .style('font-size', d => {
-        // @ts-ignore
-        return d.properties.labelFontSize ?? this.LABEL_DEFAULT_FONT_SIZE;
+      .attr('class', (d: any) => {
+        const classes: string[] = ['t-c-map__country-name'];
+        if (d.properties.hoverableName) {
+          classes.push('t-c-map__country-name--hoverable');
+        }
+        return classes.join(' ');
       })
-      .style('fill', '#000')
+      .attr('font-size', (d: any) => {
+        return d.properties.labelFontSize;
+      })
+      .attr('fill', '#000')
+      .on('mouseover', (e, d) => {
+        this.handleMouseOver(e, d);
+      })
+      .on('mousemove', (e) => {
+        this.handleMouseMove(e);
+      })
+      .on('mouseout', () => {
+        this.handleMouseOut();
+      })
   }
 
   createTooltip (): void {
@@ -154,8 +165,7 @@ export class InteractiveMap {
     return parseFloat(value.toFixed(1));
   }
 
-  handleMouseOver (event: any, d: any) {
-    d3.select(event.currentTarget).attr('stroke', 'black');
+  handleMouseOver (_event: any, d: any) {
     this.tooltip
       .style('visibility', 'visible')
       .html(`
