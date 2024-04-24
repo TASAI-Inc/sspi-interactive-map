@@ -14,8 +14,8 @@ collections:
     permalink: :path
 
 
-destination: ./_site_build_tasaisspi2024_html
-exclude: [/*.php, /*.lock, /*.json, /*.css, /template-parts, /languages, /js, /inc, /wordpress, /functions]
+destination: ./_site
+exclude: [/*.php, /*.lock, /package.json, /package-lock.json, /map.html, /README.md, /tsconfig.json, /src, /scripts, /data, /output, /template-parts, /languages, /js, /inc, /wordpress, /functions]
 
 # plugins:
 #   - jekyll-autoprefixer
