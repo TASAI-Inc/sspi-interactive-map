@@ -138,6 +138,10 @@ body {
 
 .t-c-map__country-name {
   pointer-events: none;
+  font-family: Verdana, sans-serif;
+  text-transform: uppercase;
+  font-weight: 600;
+  letter-spacing: 0;
 }
 
 .t-c-map__country-name--hoverable {
