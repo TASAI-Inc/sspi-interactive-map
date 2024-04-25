@@ -176,8 +176,8 @@ export class InteractiveMap {
       .attr('class', 'lm-c-tooltip');
   }
 
-  roundToFirstDecimal (value: number): number {
-    return parseFloat(value.toFixed(1));
+  roundToTwoDecimal (value: number): number {
+    return parseFloat(value.toFixed(2));
   }
 
   handleMouseOver (_event: any, d: any) {
@@ -185,9 +185,8 @@ export class InteractiveMap {
       .style('visibility', 'visible')
       .html(`
           <h4 class="t-c-tooltip__label">${d.properties.name}</h4>
-          <span class="t-c-tooltip__score">${d.properties.score != null ? this.roundToFirstDecimal(d.properties.score) : 'No Data'}</span>
+          <span class="t-c-tooltip__score">${d.properties.score != null ? this.roundToTwoDecimal(d.properties.score) : 'No Data'}</span>
       `);
-    // ${d.properties.score ? '<span class="t-c-tooltip__more-details">Click for more details</span>' : ''}
   };
 
   handleMouseMove (event: any): void {
