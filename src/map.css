@@ -58,10 +58,6 @@ a:hover {
   height: 700px;
 }
 
-.t-c-map-filter {
-  width: 30%;
-}
-
 .t-c-map-filter__label {
   display: inline-block;
   max-width: 100%;
@@ -71,7 +67,7 @@ a:hover {
 
 .t-c-map-filter__input {
   display: block;
-  width: 100%;
+  width: auto;
   height: 34px;
   padding: 6px 12px;
   font-size: 14px;
@@ -138,6 +134,12 @@ a:hover {
   font-size: 14px;
 }
 
+.t-c-tooltip__more-details {
+  display: block;
+  font-size: 12px;
+  margin-top: 15px;
+}
+
 .t-c-map__country-name {
   pointer-events: none;
   font-family: Verdana, sans-serif;
@@ -147,6 +149,6 @@ a:hover {
 }
 
 .t-c-map__country-name--hoverable {
-  cursor: default;
+  cursor: pointer;
   pointer-events: auto;
 }

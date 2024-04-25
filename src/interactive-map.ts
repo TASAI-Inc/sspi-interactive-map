@@ -99,10 +99,15 @@ export class InteractiveMap {
       .attr('fill', (d: any) => {
         return this.getScaleColorFromValue(d.properties.score);
       })
+      .style('cursor', 'pointer')
       .attr('d', this.geoGenerator)
-      .style('stroke', d => {
-        // @ts-ignore
-        return d.properties.isIsland ? '#000' : '#fff'
+      .style('stroke', (d: any) => {
+        return d.properties.isIsland ? '#000' : '#fff';
+      })
+      .on('click', (_e: any, d: any) => {
+        if (d.properties.score) {
+          this.openCountryPdf(d.properties.code);
+        }
       })
       .on('mouseover', (e, d) => {
         this.handleMouseOver(e, d);
@@ -151,6 +156,9 @@ export class InteractiveMap {
         return d.properties.labelFontSize;
       })
       .attr('fill', '#000')
+      .on('click', (_e: any, d: any) => {
+        this.openCountryPdf(d.properties.code);
+      })
       .on('mouseover', (e, d) => {
         this.handleMouseOver(e, d);
       })
@@ -177,7 +185,9 @@ export class InteractiveMap {
       .style('visibility', 'visible')
       .html(`
           <h4 class="t-c-tooltip__label">${d.properties.name}</h4>
-          <span class="t-c-tooltip__score">${d.properties.score != null ? this.roundToFirstDecimal(d.properties.score) : 'No Data'}</span>`);
+          <span class="t-c-tooltip__score">${d.properties.score != null ? this.roundToFirstDecimal(d.properties.score) : 'No Data'}</span>
+      `);
+    // ${d.properties.score ? '<span class="t-c-tooltip__more-details">Click for more details</span>' : ''}
   };
 
   handleMouseMove (event: any): void {
@@ -215,5 +225,9 @@ export class InteractiveMap {
 
   private getSelectedIndicator (): string {
     return this.indicatorFilter.selectedIndicator;
+  }
+
+  private openCountryPdf (countryCode: string): void {
+    window.open(`https://wp.tasai.org/wp-content/uploads/CB_${countryCode}.pdf`, '_blank');
   }
 }
