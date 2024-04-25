@@ -18,6 +18,10 @@ function removeListIndent (value: string): string {
   return value.replace(/\d+\.\s/, '');
 }
 
+function addIndicatorPrefix (value: string): string {
+  return `IND ${value}`;
+}
+
 function generateIndicatorCode (value: string): string {
   const regexFirstChar: RegExp = /\B\w+\W*/g;
   return removeListIndent(value).replace(regexFirstChar, '').toLowerCase();
@@ -33,7 +37,7 @@ async function generateIndicators (): Promise<void> {
   const columnsObject: IIndicator[] = headerColumns.map(header => {
     return {
       code: generateIndicatorCode(header),
-      label: removeListIndent(header),
+      label: addIndicatorPrefix(header), // removeListIndent(header),
       originalLabel: header,
       averageValue: averageRow[header]
     };
