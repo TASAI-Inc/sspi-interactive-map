@@ -1521,10 +1521,10 @@
     {
       "type": "Feature",
       "properties": {
-        "name": "Burkina Faso",
+        "name": "Burkina\nFaso",
         "code": "BFA",
         "isIsland": false,
-        "labelFontSize": 11,
+        "labelFontSize": 10,
         "xOffset": 0,
         "yOffset": 0,
         "cartodb_id": 5,
@@ -11075,7 +11075,7 @@
         "name": "Rwanda",
         "code": "RWA",
         "isIsland": false,
-        "labelFontSize": 11,
+        "labelFontSize": 4,
         "xOffset": 0,
         "yOffset": 0,
         "cartodb_id": 43,
@@ -11206,8 +11206,8 @@
         "code": "STP",
         "isIsland": true,
         "labelFontSize": 11,
-        "xOffset": 0,
-        "yOffset": 0,
+        "xOffset": 10,
+        "yOffset": -10,
         "cartodb_id": 44,
         "score": null
       },

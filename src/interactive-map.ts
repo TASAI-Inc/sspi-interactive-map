@@ -11,7 +11,7 @@ export class InteractiveMap {
   private geoJsonData: any;
   private countriesScores: ICountryDataEntry[] = [];
 
-  private readonly SVG_WIDTH: number = 700;
+  private readonly SVG_WIDTH: number = 859;
   private readonly SVG_HEIGHT: number = 700;
   private tooltip: any;
 
@@ -128,8 +128,15 @@ export class InteractiveMap {
         return this.path.centroid(d)[1] + d.properties.yOffset;
       })
       .html((d: any) => {
-        const nameParts: string[] = d.properties.name.split('<br/>');
-        return nameParts.map(namePart => `<tspan>${namePart}</tspan>`).join('');
+        const nameParts: string[] = d.properties.name.split('\n');
+        return nameParts.map((namePart: string, _idx: number, _nameParts: string[]): string => {
+          if (_nameParts.length === 1) {
+            return `<tspan>${namePart}</tspan>`;
+          }
+          const dx: number = -1 * (namePart.length/2) * d.properties.labelFontSize;
+          const dy: number = d.properties.labelFontSize;
+          return `<tspan dx="${dx}" dy="${dy}">${namePart}</tspan>`;
+        }).join('');
       })
       .attr('text-anchor', 'middle')
       .attr('alignment-baseline', 'central')
