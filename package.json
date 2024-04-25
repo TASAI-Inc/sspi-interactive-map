@@ -5,7 +5,7 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "tsc && vite build",
+    "build": "npm run generate-data && tsc && vite build",
     "preview": "vite preview",
     "generate-data": "npx tsx scripts/generate-json-from-sheets.ts"
   },
