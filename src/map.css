@@ -94,6 +94,7 @@ a:hover {
   column-gap: 3px;
   display: grid;
   grid-template-columns: repeat(6, 1fr);
+  width: 100%;
 }
 
 @media (min-width: 900px) {
