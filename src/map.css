@@ -202,3 +202,16 @@ a:hover {
   cursor: pointer;
   pointer-events: auto;
 }
+
+.t-c-countries-reports {
+  width: auto;
+  background-color: transparent;
+  color: black;
+  border: 0 none;
+  border-bottom-width: 0px;
+  border-bottom-style: none;
+  border-bottom-color: currentcolor;
+  border-bottom: 1px solid black;
+  font-size: 18px;
+  padding: 12px 6px;
+}
