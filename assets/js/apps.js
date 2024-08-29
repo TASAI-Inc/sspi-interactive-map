@@ -1,3 +1,4 @@
+/*
 
 
 // function for add bg to navbar on scroll
@@ -48,7 +49,7 @@ document.addEventListener('DOMContentLoaded', function () {
 // console.log(result.css);
 
 
-// note toggle dark mode 
+// note toggle dark mode
 document.addEventListener('DOMContentLoaded', () => {
   const toggleContainer = document.getElementById('darkModeToggle');
   const body = document.body;
@@ -93,3 +94,4 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 
+*/
