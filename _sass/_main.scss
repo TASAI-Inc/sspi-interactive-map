@@ -71,8 +71,7 @@ main {
 }
 
 footer {
-  padding-top: 1.5rem;
-  padding-bottom: 4rem;
+  padding: 1.5rem 0;
   color: $white;
   font-size: 94%;
 
@@ -93,14 +92,6 @@ footer {
         color: $dreambays_gold_light;
       }
     }
-  }
-
-  h1,
-  h2,
-  h3,
-  h4,
-  h5 {
-    font-family: $font-family-serif;
   }
 
   // note footer social media icons
