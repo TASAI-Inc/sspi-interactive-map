@@ -1,0 +1,11 @@
+# Begin EnforceSSL sspi-africa.com
+<IfModule mod_rewrite.c>
+RewriteEngine On
+
+# Enforce SSL
+RewriteCond %{HTTP_HOST} ^(www.)?sspi-africa.com$
+RewriteCond %{HTTPS} !=on
+RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L]
+
+</IfModule>
+# End EnforceSSL
