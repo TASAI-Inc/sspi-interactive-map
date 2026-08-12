@@ -50,6 +50,6 @@ export class CountriesReportsSelect {
   }
 
   private openCountryPdf (countryCode: string): void {
-    window.open(`https://wp.tasai.org/wp-content/uploads/CB_${countryCode}.pdf`, '_blank');
+    window.open(`https://sspi-africa.com/assets/img/CB_${countryCode}.pdf`, '_blank');
   }
 }
